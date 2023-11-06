@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
     provider = "prisma-client-js"
 }
@@ -35,9 +32,43 @@ model User {
     codepostal              String                                                            //  Code postal de l'utilisateur
     rue                     String                                                            //  Rue de l'utilisateur
     ville                   String                                                            //  Ville de l'utilisateur
+    complementadresse       String                                                            //  Complément d'adresse de l'utilisateur
+
+    isadmin                 Boolean          @default(false)                                  //  Etat administrateur de l'utilisateur
+    
+
 }
 
-enum Pays { 
+model Sentence {
+    id                      Int              @id @unique @default(autoincrement())            //  Id de la phrase
+
+    phrase                  Word[]           @relation("phrase")                              //  Mots de la phrase
+    langue                  Langue                                                            //  Langue de la phrase
+
+    traductions             Sentence[]       @relation("traduction")                          //  Traductions de la phrase
+    traduitPar              Sentence[]       @relation("traduction")                          //  Traduit par la phrase
+}
+
+model Word {
+    id                      Int              @id @unique @default(autoincrement())            //  Id du mot
+
+    mot                     String                                                            //  Mot en question
+    langue                  Langue                                                            //  Langue du mot
+    
+    definition              String                                                            //  Définition du mot
+
+    traductions             Word[]           @relation("traduction")                          //  Traductions du mot
+    traduitPar              Word[]           @relation("traduction")                          //  Traduit par le mot
+
+    phrases                 Sentence[]       @relation("phrase")                              //  Phrases contenant le mot
+}
+
+enum Pays {
   BZH
   FR
+}
+
+enum Langue {
+    FR
+    BZH
 }
