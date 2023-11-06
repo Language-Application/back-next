@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id                      Int              @id @unique @default(autoincrement())            //  Id du compte
+    createdAt               DateTime         @default(now())                                  //  Date de création du compte
+    updatedAt               DateTime         @default(now())                                  //  Date de modification du compte
+    connectedAt             DateTime         @default(now())                                  //  Date de connexion au compte
+
+    following               User[]           @relation("followUser")                          //  Suivis par l'utilisateur
+    followed                User[]           @relation("followUser")                          //  Suivant l'utilisateur
+    blocked                 User[]           @relation("blockUser")                           //  Bloqués par l'utilisateur
+    blockedBy               User[]           @relation("blockUser")                           //  Bloquant l'utilisateur
+
+    prenom                  String                                                            //  Prénom de l'utilisateur
+    pseudo                  String           @unique                                          //  Pseudonyme de l'utilisateur
+    email                   String           @unique                                          //  Email de l'utilisateur
+    emailconfirmed          Boolean          @default(false)                                  //  Etat de confirmation de l'email de l'utilisateur
+    phone                   String           @unique                                          //  Numéro de téléphone de l'utilisateur
+    phoneconfirmed          Boolean          @default(false)                                  //  Etat de confirmation du numéro de téléphone de l'utilisateur  
+    birthdate               DateTime                                                          //  Date de naissance de l'utilisateur
+    pic                     String           @default("/img/defaultprofilepic.png")           //  Photo de l'utilisateur
+    password                String                                                            //  Mot de passe de l'utilisateur
+    
+    pays                    Pays                                                              //  Pays de l'utilisateur
+    codepostal              String                                                            //  Code postal de l'utilisateur
+    rue                     String                                                            //  Rue de l'utilisateur
+    ville                   String                                                            //  Ville de l'utilisateur
+}
+
+enum Pays { 
+  BZH
+  FR
+}
