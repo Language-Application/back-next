@@ -7,7 +7,7 @@ export default function Page({children}) {
     
     return (
 
-        <>
+        <main className='flex flex-col max-w-screen overflow-x-hidden'>
 
             <Header/>
             
@@ -15,7 +15,7 @@ export default function Page({children}) {
             
             <Footer/>
         
-        </>
+        </main>
     
     )
 
