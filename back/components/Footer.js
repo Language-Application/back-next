@@ -1,288 +1,207 @@
 import Link from 'next/link'
+import Column from './Column'
 
 export default function Footer() {
     
     return (
     
-        <footer className='flex flex-col w-screen bg-green-500 items-center'>
+        <footer className='flex flex-col w-screen bg-green-600 items-center'>
 
-            <section className='flex flex-row justify-between items-start gap-4 py-8 md:max-w-[70%]'>
+            <section className='flex flex-row justify-between py-8 md:max-w-[1000px] w-full'>
 
-                <div>
+                <Column title={"À propos"}>
 
-                    <h3>A propos</h3>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Cours</p>
 
-                    <div>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Cours</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Mission</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Mission</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Approche</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Approche</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Efficacité</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Efficacité</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Equipe</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Equipe</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Recherche</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Recherche</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Carrières</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Carrières</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Directives de la marque</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Directives de la marque</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Boutique</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Boutique</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Presse</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Presse</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Investisseurs</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Investisseurs</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Nous contacter</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Nous contacter</p>
+                </Column>
 
-                        </Link>
+                <Column title={"Produits"}>
 
-                    </div>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin</p>
 
-                </div>
+                    </Link>
 
-                <div>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin for schools</p>
 
-                    <h3>Produits</h3>
+                    </Link>
 
-                    <div>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin test de Breton</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Podcast</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin for schools</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin for business</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin test de Breton</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Super Deskin</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Podcast</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin for business</p>
+                        <p>Offre Super Deskin</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Super Deskin</p>
+                </Column>
 
-                        </Link>
+                <Column title={"Nos applications"}>
 
-                        <Link href={`/fr/`}>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin pour Android</p>
 
-                            <p>Offre Super Deskin</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Deskin pour IOS</p>
 
-                    </div>
+                    </Link>
 
-                </div>
+                </Column>
 
-                <div>
+                <Column title={"Aide et support"}>
 
-                    <h3>Nos applis</h3>
+                    <Link href={`/fr/`}>
+                    
+                        <p>FAQ sur Deskin</p>
 
-                    <div>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin pour Android</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>FAQ sur écoles</p>
 
-                        </Link>
+                    </Link>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>Deskin pour IOS</p>
+                    <Link href={`/fr/`}>
+                    
+                        <p>FAQ sur le Deskin Brezhoneg Test</p>
 
-                        </Link>
+                    </Link>
 
-                    </div>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Statut</p>
 
-                </div>
+                    </Link>
 
-                <div>
+                </Column>
 
-                    <h3>Aide et support</h3>
+                <Column title={"Conditions d'utilisation et confidentialité"}>
 
-                    <div>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Règles de conduite de la communauté</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>FAQ sur Deskin</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Conditions d'utilisation</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>FAQ sur écoles</p>
+                    </Link>
 
-                        </Link>
+                    <Link href={`/fr/`}>
+                    
+                        <p>Politique de confidentialité</p>
 
-                        <Link href={`/fr/`}>
-                        
-                            <p>FAQ sur le Deskin Brezhoneg Test</p>
+                    </Link>
 
-                        </Link>
-
-                        <Link href={`/fr/`}>
-                        
-                            <p>Statut</p>
-
-                        </Link>
-
-                    </div>
-
-                </div>
-
-                <div>
-
-                    <h3>Conditions d'utilisation et confidentialité</h3>
-
-                    <div>
-
-                        <Link href={`/fr/`}>
-                        
-                            <p>Règles de conduite de la communauté</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-                        
-                            <p>Conditions d'utilisation</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-                        
-                            <p>Politique de confidentialité</p>
-
-                        </Link>
-
-                    </div>
-
-                </div>
-
-                {/* <div>
-
-                    <h3>Social</h3>
-
-                    <div>
-
-                        <Link href={`/fr/`}>
-
-                            <p>Blog</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-                        
-                            <p>Twitter</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-
-                            <p>Facebook</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-
-                            <p>Instagram</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-
-                            <p>LinkedIn</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-
-                            <p>YouTube</p>
-
-                        </Link>
-
-                        <Link href={`/fr/`}>
-
-                            <p>GitHub</p>
-
-                        </Link>
-
-                    </div>
-
-                </div> */}
+                </Column>
 
             </section>
 
             <hr className='flex flex-row w-screen border-green-200 border-t-[2px]'/>
 
-            <section className='flex flex-row gap-8 justify-between py-16 md:max-w-[70%] items-start w-full'>
+            <section className='flex flex-row gap-8 justify-between py-16 md:max-w-[1000px] items-start w-full'>
                 
                 <div className='flex flex-col gap-4'>
 
