@@ -69,6 +69,6 @@ enum Pays {
 }
 
 enum Langue {
-    FR
-    BZH
+    FR          //  Français
+    BR          //  Brezhoneg
 }
