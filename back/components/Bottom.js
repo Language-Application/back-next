@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-const Bottom = () => {
+export default function Bottom() {
     return (
         <div className="bg-gray-800 py-4">
             <div className="container mx-auto flex justify-between items-center px-4">
@@ -18,7 +18,5 @@ const Bottom = () => {
                 <div className="text-gray-300">&copy; 2021 MonSite.com</div>
             </div>
         </div>
-    );
-};
-
-export default Bottom;
+    )
+}
