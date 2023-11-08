@@ -6,7 +6,7 @@ export default function Home() {
   
     <Page>
   
-      <div className='flex flex-col h-screen'>
+      <div className='flex flex-col h-[calc(100vh-70px)] bg-white'>
 
         <p>Je suis une merde</p>
 

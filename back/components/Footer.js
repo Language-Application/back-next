@@ -5,7 +5,7 @@ export default function Footer() {
     
     return (
     
-        <footer className='flex flex-col w-screen bg-green-600 items-center'>
+        <footer className='flex flex-col w-screen bg-green-600 items-center border-t-[2px] border-green-200'>
 
             <section className='flex md:flex-row flex-col md:justify-between justify-center py-16 md:max-w-[1000px] w-full px-8 gap-8'>
 
@@ -389,7 +389,7 @@ export default function Footer() {
 
                     </div>
                         
-                    <p className='text-xs font-bold'>© 2023 Deskiñ SAS</p>
+                    <p className='text-xs font-bold'>© {new Date().getFullYear()} Deskiñ SAS</p>
 
                 </div>
 
