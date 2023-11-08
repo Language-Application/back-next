@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps } from 'next'
 
 export const getServerSideProps: GetServerSideProps = async () => {
     return {
@@ -6,9 +6,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
             destination: '/fr/',
             permanent: true,
         },
-    };
-};
+    }
+}
 
-const HomePage = () => null;
+const HomePage = () => null
 
-export default HomePage;
+export default HomePage

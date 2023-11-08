@@ -29,3 +29,13 @@ body {
 ::-webkit-scrollbar {
   display: none !important;
 }
+
+footer a {
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}

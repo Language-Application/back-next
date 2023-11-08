@@ -3,15 +3,19 @@ import Footer from './Footer.js'
 
 // Créer une fonctioon Page, récupérer ses enfants, les passer dans le return
 
-export default function Page({children}) {
+export default function Page({children,lang}) {
     
     return (
 
-        <main className='flex flex-col max-w-screen overflow-x-hidden'>
+        <main className='flex flex-col max-w-screen overflow-x-hidden relative'>
 
             <Header/>
             
-            {children}
+            <div className='flex flex-col mt-[70px]'>
+            
+                {children}
+            
+            </div>
             
             <Footer/>
         

@@ -1,6 +1,6 @@
 import Page from '../../components/Page'
 
-export default function Home({lang}) {
+export default function Home() {
 
   return (
   
@@ -24,11 +24,31 @@ export async function getServerSideProps(context) {
 
   const lang = context.query.lang
 
-  return {
+  // Si la langue est différente des exemples admis comme "fr" ou "en" ou "br", on redirige vers la page d'accueil
 
-    props: {
+  if (lang !== "fr" && lang !== "en" && lang !== "br") {
+      
+    return {
 
-      lang:lang.toUpperCase()
+      redirect: {
+
+        destination: `/fr/${lang}`,
+
+        permanent: true,
+
+      }
+
+    }
+
+  } else {
+
+    return {
+
+      props: {
+
+        lang:lang.toUpperCase()
+
+      }
 
     }
 
