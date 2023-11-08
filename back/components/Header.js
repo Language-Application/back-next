@@ -44,10 +44,10 @@ export default function Header() {
 
         </div>
 
-        <button className={`flex flex-row px-4 py-2.5 bg-green-600 rounded-lg ${isScrolled?'':'hidden'}`}>
-          
-          <p className="text-base font-bold text-green-200">C'est parti</p>
-          
+        <button className={`flex text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold ${isScrolled?'':'hidden'}`}>
+            
+          <p>C'EST PARTI !</p>
+
         </button>
         
       </div>
