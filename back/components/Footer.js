@@ -388,12 +388,8 @@ export default function Footer() {
                         </Link>
 
                     </div>
-
-                    <a>
                         
-                        <p>© 2023 Deskiñ SAS</p>                    
-
-                    </a>
+                    <p className='text-xs font-bold'>© 2023 Deskiñ SAS</p>
 
                 </div>
 
