@@ -6,29 +6,29 @@ export default function Home() {
   
     <Page>
   
-      <div className='flex flex-col h-[calc(100vh-70px)] bg-white text-black'>
+      <div className='flex flex-col h-[calc(100vh-70px)] md:h-[calc(100vh-140px)] bg-white text-black items-center'>
         
-        <div className='flex flex-col md:justify-between justify-center md:max-w-[1000px] w-full p-6 h-full'>
+        <div className='flex flex-col md:flex-row md:gap-4 md:justify-between md:items-center justify-center md:max-w-[1000px] w-full p-6 h-full'>
 
           <div className='flex flex-col h-max flex-1 items-center justify-end'>
 
-            <img className='max-w-[75%] object-contain' src='https://d35aaqx5ub95lt.cloudfront.net/images/splash/lottie/a774fe14d71e450d59a9bc4ed5d210c9.png' alt='Logo' />
+            <img className='max-w-[75%] object-contain md:w-full' src='https://d35aaqx5ub95lt.cloudfront.net/images/splash/lottie/a774fe14d71e450d59a9bc4ed5d210c9.png' alt='Logo' />
 
           </div>
           
-          <div className='flex flex-col w-full gap-4 flex-1 items-center justify-between'>
+          <div className='flex flex-col w-full md:gap-16 gap-4 flex-1 items-center justify-between md:justify-center'>
             
-            <h2 className='text-center font-bold text-3xl text-gray-600 pt-4'>La méthode gratuite, fun et efficace pour apprendre le breton !</h2>
+            <h2 className='max-w-[480px] text-center font-bold text-3xl text-gray-600 pt-4'>La méthode gratuite, fun et efficace pour apprendre une langue !</h2>
             
-            <div className='flex flex-col gap-4 w-full'>
+            <div className='flex flex-col gap-4 w-full md:justify-center items-center'>
   
-              <button className='flex w-full text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>
+              <button className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>
                   
                 <p>C'EST PARTI !</p>
     
               </button>
     
-              <button className='flex w-full text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-green-600 text-green-600 font-bold'>
+              <button className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-green-600 text-green-600 font-bold'>
                   
                 <p>J'AI DEJA UN COMPTE</p>
     
@@ -42,11 +42,9 @@ export default function Home() {
 
       </div>
   
-      {/* <div className='flex flex-col h-[calc(100vh-70px)] bg-white'>
+      <div className='flex flex-col h-[calc(100vh-70px)] md:h-[calc(100vh-140px)] bg-white text-black items-center'>
 
-        <p>Apprends ou tu veux, quand tu veux</p>
-
-      </div> */}
+      </div>
   
     </Page>
   
