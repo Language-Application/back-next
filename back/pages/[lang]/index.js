@@ -63,13 +63,13 @@ export async function getServerSideProps(context) {
 
   // Si la langue est différente des exemples admis comme "fr" ou "en" ou "br", on redirige vers la page d'accueil
 
-  if (lang !== "fr" && lang !== "en" && lang !== "br") {
+  if (lang !== "fr" && lang !== "en" && lang !== "bre" && lang !== "cor" && lang !== "wel" && lang !== "glv" && lang !== "gla" && lang !== "gle") {
       
     return {
 
       redirect: {
 
-        destination: `/fr/${lang}`,
+        destination: `/en/${lang}`,
 
         permanent: true,
 

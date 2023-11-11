@@ -1,5 +1,10 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import isEmail from '../../functions/format/formamail'
+import isPseudo from '../../functions/format/formapseudo'
+import isName from '../../functions/format/formaname'
+import isBirthDate from '../../functions/format/formabirthdate'
+import checkPassword from '../../functions/format/formapass'
 
 export default function Register({lang}) {
 
@@ -9,6 +14,22 @@ export default function Register({lang}) {
 
     const [visiblePassword1, setVisiblePassword1] =useState(false)
     const [visiblePassword2, setVisiblePassword2] =useState(false)
+
+    const [langSpoken, setLangSpoken] = useState(lang.toUpperCase())
+    const [langLearning, setLangLearning] = useState('')
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const [pseudo, setPseudo] = useState('')
+    const [birthDate, setBirthDate] = useState({year:'',month:'',day:''})
+    const [password, setPassword] = useState('')
+    const [passwordConfirm, setPasswordConfirm] = useState('')
+
+    const [emailError, setEmailError] = useState(false)
+    const [nameError, setNameError] = useState(false)
+    const [pseudoError, setPseudoError] = useState(false)
+    const [birthDateError, setBirthDateError] = useState(false)
+    const [passwordError, setPasswordError] = useState([false,false,false,false,false,false,false])
+
     
     return (
         
@@ -44,7 +65,7 @@ export default function Register({lang}) {
 
                         <div className='flex flex-wrap h-full max-w-[390px] items-start gap-4 justify-between p-8 overflow-y-scroll mb-16'>
                                 
-                            <button onClick={()=>{setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] max-w-[155px] w-[145px]'>
+                            <button onClick={()=>{setLangLearning('BRE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -56,7 +77,7 @@ export default function Register({lang}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>router.push('../')} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('COR'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -68,7 +89,7 @@ export default function Register({lang}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>router.push('../')} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLV'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -80,7 +101,7 @@ export default function Register({lang}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>router.push('../')} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('WEL'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -92,7 +113,7 @@ export default function Register({lang}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>router.push('../')} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLA'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -104,7 +125,7 @@ export default function Register({lang}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>router.push('../')} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
                                 
                                 <div className='h-full justify-between flex flex-col'>
 
@@ -136,11 +157,11 @@ export default function Register({lang}) {
 
                                 <div className='flex flex-row gap-4 max-w-[330px]'>
 
-                                    <input type='text' placeholder='Jour' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none'/>
+                                    <input type='text' value={birthDate.day} onChange={(e)=>{setBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}),setBirthDateError(isBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}))}} placeholder='Jour' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.day!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
-                                    <input type='text' placeholder='Mois' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none'/>
+                                    <input type='text' value={birthDate.month} onChange={(e)=>{setBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}),setBirthDateError(isBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}))}} placeholder='Mois' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.month!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
-                                    <input type='text' placeholder='Année' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none'/>
+                                    <input type='number' value={birthDate.year} onChange={(e)=>{setBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}),setBirthDateError(isBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}))}} placeholder='Année' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.year!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
                                 </div>
 
@@ -152,11 +173,19 @@ export default function Register({lang}) {
 
                                 <div className='flex flex-col gap-4'>
                             
-                                    <input type='text' placeholder='Prénom' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none'/>
+                                    <input type='text' value={name.substring(0,20)} onChange={(e)=>{setName(e.target.value),setNameError(isName(e.target.value))}} placeholder='Prénom' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${name!==''?nameError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
                                     
-                                    <input type='text' placeholder='Pseudonyme' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none'/>
+                                    {/* <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder='Pseudonyme' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/> */}
+                            
+                                    <div className={`flex flex-row items-center border-b-[4px] bg-white w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px] text-sm text-black font-semibold  transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}>
 
-                                    <input type='text' placeholder='Adresse mail' className='w-full text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none'/>
+                                        <p className='pl-4'>@</p>
+
+                                        <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder='pseudonyme' className={`w-full h-full outline-none pr-4 py-2.5`}/>
+
+                                    </div>
+
+                                    <input type='text' value={email.toLowerCase()} onChange={(e)=>{setEmail(e.target.value),setEmailError(isEmail(e.target.value))}} placeholder='Adresse mail' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${email!==''?emailError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
                                 </div>
 
@@ -164,7 +193,7 @@ export default function Register({lang}) {
 
                         </div>
                         
-                        <button onClick={()=>setOnglet(onglet+1)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>Suivant</button>
+                        <button disabled={birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false} onClick={()=>setOnglet(onglet+1)} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false?'opacity-50':'opacity-1'}`}>Suivant</button>
 
                     </div>
                     
@@ -178,9 +207,9 @@ export default function Register({lang}) {
                         
                         <div className='flex flex-col gap-4 items-center w-full'>
                             
-                            <div className='flex flex-row w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
+                            <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
-                                <input type={visiblePassword1?'text':'password'} placeholder='Mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
+                                <input value={password} type={visiblePassword1?'text':'password'} onChange={(e)=>{setPassword(e.target.value),setPasswordError(checkPassword(e.target.value))}} placeholder='Mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
 
                                 <button onClick={()=>setVisiblePassword1(!visiblePassword1)} className='bg-white p-4 relative items-center justify-center'>
 
@@ -199,9 +228,9 @@ export default function Register({lang}) {
 
                             </div>
                             
-                            <div className='flex flex-row w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
+                            <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
-                                <input type={visiblePassword2?'text':'password'} placeholder='Confirmer le mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
+                                <input value={passwordConfirm} type={visiblePassword2?'text':'password'} onChange={(e)=>{setPasswordConfirm(e.target.value)}} placeholder='Confirmer le mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
 
                                 <button onClick={()=>setVisiblePassword2(!visiblePassword2)} className='bg-white p-4 relative items-center justify-center'>
 
@@ -219,6 +248,166 @@ export default function Register({lang}) {
                                 </button>
 
                             </div>
+                            
+                            <div className='w-full text-xs font-semibold text-white flex-col flex gap-2'>
+                                
+                                {passwordError?.[1]===false?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins six caractères</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins six caractères</p>
+    
+                                    </div>
+                                    
+                                }
+                                
+                                {passwordError?.[3]===false?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins une majuscule</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins une majuscule</p>
+    
+                                    </div>
+                                    
+                                }
+                                
+                                {passwordError?.[4]===false?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins une minuscule</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins une minuscule</p>
+    
+                                    </div>
+                                    
+                                }
+                                
+                                {passwordError?.[2]===false?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins un chiffre</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins un chiffre</p>
+    
+                                    </div>
+                                    
+                                }
+                                
+                                {passwordError?.[5]===false?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins un caractère spécial</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Au moins un caractère spécial</p>
+    
+                                    </div>
+                                    
+                                }
+                                
+                                {password==''||password!==passwordConfirm?
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-red-600`}>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                        </svg>
+                                        
+                                        <p>Les deux mots de passe correspondent</p>
+
+                                    </div>
+                                
+                                    :
+                                
+                                    <div className={`flex flex-row gap-2 items-center text-green-600`}>
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(22 163 74)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        
+                                        <p>Les deux mots de passe correspondent</p>
+    
+                                    </div>
+                                    
+                                }
+
+                            </div>
 
                         </div>
                         
@@ -228,7 +417,7 @@ export default function Register({lang}) {
 
                             <p>La Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent.</p>
                         
-                            <button onClick={()=>router.push('../')} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>Créer mon compte</button>
+                            <button disabled={password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm?'opacity-50':'opacity-1'}`}>Créer mon compte</button>
 
                         </div>
 
@@ -252,13 +441,13 @@ export async function getServerSideProps(context) {
 
   // Si la langue est différente des exemples admis comme "fr" ou "en" ou "br", on redirige vers la page d'accueil
 
-  if (lang !== "fr" && lang !== "en" && lang !== "br") {
+  if (lang !== "fr" && lang !== "en" && lang !== "bre" && lang !== "cor" && lang !== "wel" && lang !== "glv" && lang !== "gla" && lang !== "gle") {
       
     return {
 
       redirect: {
 
-        destination: `/fr/${lang}`,
+        destination: `/en/${lang}`,
 
         permanent: true,
 

@@ -70,5 +70,11 @@ enum Pays {
 
 enum Langue {
     FR          //  Français
-    BR          //  Brezhoneg
+    EN          //  English
+    BRE         //  Brezhoneg
+    WEL         //  Welsh
+    COR         //  Cornish
+    GLV         //  Manx
+    GLA         //  Scottish
+    GLE         //  Irish
 }
