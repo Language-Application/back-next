@@ -1,0 +1,51 @@
+{
+
+    "EN" : {
+
+        "title" : "The Welsh Government"
+
+    },
+    
+    "FR" : {
+
+        "title" : "Le Gouvernement Gallois"
+
+    },
+
+    "BRE" : {
+
+        "title" : "Llywodraeth Cymru BRE"
+
+    },
+    
+    "WEL" : {
+
+        "title" : "Y Llywodraeth Cymru WEL"
+
+    },
+    
+    "COR" : {
+
+        "title" : "Y Gwladfa COR"
+
+    },
+    
+    "GLV" : {
+
+        "title" : "Y Gwladfa GLV"
+
+    },
+    
+    "GLA" : {
+
+        "title" : "Y Gwladfa GLA"
+
+    },
+    
+    "GLE" : {
+
+        "title" : "Y Gwladfa GLE"
+
+    }
+
+}

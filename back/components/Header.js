@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-export default function Header() {
+export default function Header({lang,data}) {
 
   const [ scroll, setScroll ] = useState(0)
   const [ isScrolled, setIsScrolled ] = useState(false)

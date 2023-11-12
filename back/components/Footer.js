@@ -1,7 +1,10 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Column from './Column'
 
-export default function Footer({lang}) {
+export default function Footer({lang,data}) {
+
+    const router = useRouter()
     
     return (
     
@@ -209,53 +212,53 @@ export default function Footer({lang}) {
 
                     <div className='text-xs font-semibold text-green-300 flex flex-wrap gap-4'>
 
-                        <Link href='/fr'>
+                        <button onClick={()=>{router.push('/fr')}}>
                                 
                             <p>🇫🇷 Français</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/en'>
+                        <button onClick={()=>{router.push('/en')}}>
                                 
                             <p>🇬🇧 English</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/bre'>
+                        <button onClick={()=>{router.push('/bre')}}>
                                 
                             <p>Brezhoneg</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/cor'>
+                        <button onClick={()=>{router.push('/cor')}}>
 
                             <p>Kernewek</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/wel'>
+                        <button onClick={()=>{router.push('/wel')}}>
 
                             <p>🏴󠁧󠁢󠁷󠁬󠁳󠁿 Cymraeg</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/glv'>
+                        <button onClick={()=>{router.push('/glv')}}>
 
                             <p>🇮🇲 Gaelg</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/gla'>
+                        <button onClick={()=>{router.push('/gla')}}>
 
                             <p>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Gàidhlig</p>
 
-                        </Link>
+                        </button>
 
-                        <Link href='/gle'>
+                        <button onClick={()=>{router.push('/gle')}}>
 
                             <p>🇮🇪 Gaeilge</p>
 
-                        </Link>
+                        </button>
 
                     </div>
 
