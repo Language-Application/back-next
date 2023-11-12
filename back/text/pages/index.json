@@ -1,51 +1,42 @@
 {
-
-    "EN" : {
-
-        "title" : "The free, fun and effective way to learn a language !"
-
-    },
-    
     "FR" : {
-
-        "title" : "La méthode gratuite, fun et efficace pour apprendre une langue !"
-
+        "title" : "La méthode gratuite, fun et efficace pour apprendre une langue !",
+        "button1" : "C'est parti !",
+        "button2" : "J'ai déjà un compte"
     },
-
+    "EN" : {
+        "title" : "The free, fun and effective way to learn a language !",
+        "button1" : "Let's go !",
+        "button2" : "I already have an account"
+    },
     "BRE" : {
-
-        "title" : "Llywodraeth Cymru BRE"
-
+        "title" : "An hentenn digoust, plijus hag efedus evit deskiñ ur yezh !",
+        "button1" : "Goude !",
+        "button2" : "Ur gont am eus dija"
     },
-    
     "WEL" : {
-
-        "title" : "Y Llywodraeth Cymru WEL"
-
+        "title" : "Y dull rhad ac am ddim, hwyliog ac effeithiol o ddysgu iaith !",
+        "button1" : "Adeiladu !",
+        "button2" : "Mae gennyf gyfrif eisoes"
     },
-    
     "COR" : {
-
-        "title" : "Y Gwladfa COR"
-
+        "title" : "The free, fun and effective way to learn a language !",
+        "button1" : "Let's go !",
+        "button2" : "I already have an account"
     },
-    
     "GLV" : {
-
-        "title" : "Y Gwladfa GLV"
-
+        "title" : "The free, fun and effective way to learn a language !",
+        "button1" : "Let's go !",
+        "button2" : "I already have an account"
     },
-    
     "GLA" : {
-
-        "title" : "Y Gwladfa GLA"
-
+        "title" : "The free, fun and effective way to learn a language !",
+        "button1" : "Let's go !",
+        "button2" : "I already have an account"
     },
-    
     "GLE" : {
-
-        "title" : "Y Gwladfa GLE"
-
+        "title" : "The free, fun and effective way to learn a language !",
+        "button1" : "Let's go !",
+        "button2" : "I already have an account"
     }
-
 }

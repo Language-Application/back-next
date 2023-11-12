@@ -28,13 +28,13 @@ export default function Home({lang,footer,header,page}) {
   
               <button onClick={()=>router.push('/register')} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>
                   
-                <p>C'EST PARTI !</p>
+                <p>{page.button1.toUpperCase()}</p>
     
               </button>
     
               <button className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-green-600 text-green-600 font-bold'>
                   
-                <p>J'AI DEJA UN COMPTE</p>
+                <p>{page.button2.toUpperCase()}</p>
     
               </button>
 

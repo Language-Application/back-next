@@ -1,51 +1,490 @@
 {
-
-    "EN" : {
-
-        "title" : "The Welsh Government"
-
-    },
-    
     "FR" : {
-
-        "title" : "Le Gouvernement Gallois"
-
+        "section1" : {
+            "column1" : {
+                "title" : "À propos",
+                "links" : {
+                    "l1" : "Cours",
+                    "l2" : "Mission",
+                    "l3" : "Approche",
+                    "l4" : "Efficacité",
+                    "l5" : "Equipe",
+                    "l6" : "Recherche",
+                    "l7" : "Carrières",
+                    "l8" : "Directives de la marque",
+                    "l9" : "Boutique",
+                    "l10" : "Presse",
+                    "l11" : "Investisseurs",
+                    "l12" : "Nous contacter"
+                }
+            },
+            "column2" : {
+                "title" : "Produits",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ pour les écoles",
+                    "l3" : "Test de langue",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ pour les entreprises",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Offres spéciales"
+                }
+            },
+            "column3" : {
+                "title" : "Nos applications",
+                "links" : {
+                    "l1" : "Deskiñ pour Android",
+                    "l2" : "Deskiñ pour IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Aide et support",
+                "links" : {
+                    "l1" : "FAQ sur Deskiñ",
+                    "l2" : "FAQ sur Deskiñ pour les écoles",
+                    "l3" : "FAQ sur Deskiñ pour les entreprises",
+                    "l4" : "FAQ sur le test de langue",
+                    "l9" : "Statut"
+                }
+            },
+            "column5" : {
+                "title" : "Conditions d'utilisation et confidentialité",
+                "links" : {
+                    "l1" : "Règles de conduite de la communauté",
+                    "l2" : "Conditions d'utilisation",
+                    "l3" : "Politique de confidentialité"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Langue du site"
+        }
     },
-
+    "EN" : {
+        "section1" : {
+            "column1" : {
+                "title" : "About",
+                "links" : {
+                    "l1" : "Courses",
+                    "l2" : "Mission",
+                    "l3" : "Approach",
+                    "l4" : "Effectiveness",
+                    "l5" : "Team",
+                    "l6" : "Research",
+                    "l7" : "Careers",
+                    "l8" : "Brand Guidelines",
+                    "l9" : "Shop",
+                    "l10" : "Press",
+                    "l11" : "Investors",
+                    "l12" : "Contact Us"
+                }
+            },
+            "column2" : {
+                "title" : "Products",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ for Schools",
+                    "l3" : "Language Test",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ for Business",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Special Offers"
+                }
+            },
+            "column3" : {
+                "title" : "Our Apps",
+                "links" : {
+                    "l1" : "Deskiñ for Android",
+                    "l2" : "Deskiñ for IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Help & Support",
+                "links" : {
+                    "l1" : "Deskiñ FAQ",
+                    "l2" : "Deskiñ for Schools FAQ",
+                    "l3" : "Deskiñ for Business FAQ",
+                    "l4" : "Language Test FAQ",
+                    "l9" : "Status"
+                }
+            },
+            "column5" : {
+                "title" : "Terms of Use & Privacy",
+                "links" : {
+                    "l1" : "Community Guidelines",
+                    "l2" : "Terms of Use",
+                    "l3" : "Privacy Policy"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Site language"
+        }
+    },
     "BRE" : {
-
-        "title" : "Llywodraeth Cymru BRE"
-
+        "section1" : {
+            "column1" : {
+                "title" : "A-zivout",
+                "links" : {
+                    "l1" : "Kentelioù",
+                    "l2" : "Kefridiezh",
+                    "l3" : "O tostaat",
+                    "l4" : "Efedusted",
+                    "l5" : "Skipailh",
+                    "l6" : "Enklask",
+                    "l7" : "Karrdioù",
+                    "l8" : "Sturiadurioù ar merk",
+                    "l9" : "Stal",
+                    "l10" : "Gwaskerell",
+                    "l11" : "Postañ",
+                    "l12" : "Mont e darempred ganimp"
+                }
+            },
+            "column2" : {
+                "title" : "Produioù",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ evit ar skolioù",
+                    "l3" : "Prouad yezhel",
+                    "l4" : "Aodio",
+                    "l5" : "Deskiñ evit an embregerezhioù",
+                    "l6" : "Dreist Deskiñ",
+                    "l7" : "Kinnigoù a-ratozh"
+                }
+            },
+            "column3" : {
+                "title" : "Hon arloadoù",
+                "links" : {
+                    "l1" : "Deskiñ evit Android",
+                    "l2" : "Deskiñ evit IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Skoazell ha skor",
+                "links" : {
+                    "l1" : "FAG e Deskiñ",
+                    "l2" : "FAG e Deskiñ evit ar skolioù",
+                    "l3" : "FAG e Deskiñ evit an embregerezhioù",
+                    "l4" : "FAG war ar prouad yezhel",
+                    "l9" : "Statud"
+                }
+            },
+            "column5" : {
+                "title" : "Divizoù implijout ha prevezded",
+                "links" : {
+                    "l1" : "Reolennoù ren ar gumuniezh",
+                    "l2" : "Divizoù implijout",
+                    "l3" : "Politikerezh prevezded"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Yezh al lec'hienn"
+        }
     },
-    
     "WEL" : {
-
-        "title" : "Y Llywodraeth Cymru WEL"
-
+        "section1" : {
+            "column1" : {
+                "title" : "Ynghylch",
+                "links" : {
+                    "l1" : "Cwrs",
+                    "l2" : "Aseiniad",
+                    "l3" : "Agwedd",
+                    "l4" : "Effeithlonrwydd",
+                    "l5" : "Tîm",
+                    "l6" : "Ymchwil",
+                    "l7" : "Gyrfaoedd",
+                    "l8" : "Canllawiau Brand",
+                    "l9" : "Siop",
+                    "l10" : "Gwasgwch",
+                    "l11" : "Buddsoddwyr",
+                    "l12" : "Cysylltwch â ni"
+                }
+            },
+            "column2" : {
+                "title" : "Cynhyrchion",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ ar gyfer ysgolion",
+                    "l3" : "Prawf iaith",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ ar gyfer cwmnïau",
+                    "l6" : "Gwych Deskiñ",
+                    "l7" : "Cynigion arbennig"
+                }
+            },
+            "column3" : {
+                "title" : "Ein apps",
+                "links" : {
+                    "l1" : "Deskiñ ar gyfer Android",
+                    "l2" : "Deskiñ ar gyfer IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Cymorth a chefnogaeth",
+                "links" : {
+                    "l1" : "CC am  Deskiñ",
+                    "l2" : "CC am Deskiñ ar gyfer ysgolion",
+                    "l3" : "CC am Deskiñ ar gyfer cwmnïau",
+                    "l4" : "CC am y prawf iaith",
+                    "l9" : "Statws"
+                }
+            },
+            "column5" : {
+                "title" : "Telerau Defnyddio a Phreifatrwydd",
+                "links" : {
+                    "l1" : "Rheolau Ymddygiad Cymunedol",
+                    "l2" : "Telerau defnyddio",
+                    "l3" : "Polisi Preifatrwydd"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Iaith y safle"
+        }
     },
-    
     "COR" : {
-
-        "title" : "Y Gwladfa COR"
-
+        "section1" : {
+            "column1" : {
+                "title" : "About",
+                "links" : {
+                    "l1" : "Courses",
+                    "l2" : "Mission",
+                    "l3" : "Approach",
+                    "l4" : "Effectiveness",
+                    "l5" : "Team",
+                    "l6" : "Research",
+                    "l7" : "Careers",
+                    "l8" : "Brand Guidelines",
+                    "l9" : "Shop",
+                    "l10" : "Press",
+                    "l11" : "Investors",
+                    "l12" : "Contact Us"
+                }
+            },
+            "column2" : {
+                "title" : "Products",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ for Schools",
+                    "l3" : "Language Test",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ for Business",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Special Offers"
+                }
+            },
+            "column3" : {
+                "title" : "Our Apps",
+                "links" : {
+                    "l1" : "Deskiñ for Android",
+                    "l2" : "Deskiñ for IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Help & Support",
+                "links" : {
+                    "l1" : "Deskiñ FAQ",
+                    "l2" : "Deskiñ for Schools FAQ",
+                    "l3" : "Deskiñ for Business FAQ",
+                    "l4" : "Language Test FAQ",
+                    "l9" : "Status"
+                }
+            },
+            "column5" : {
+                "title" : "Terms of Use & Privacy",
+                "links" : {
+                    "l1" : "Community Guidelines",
+                    "l2" : "Terms of Use",
+                    "l3" : "Privacy Policy"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Site language"
+        }
     },
-    
     "GLV" : {
-
-        "title" : "Y Gwladfa GLV"
-
+        "section1" : {
+            "column1" : {
+                "title" : "About",
+                "links" : {
+                    "l1" : "Courses",
+                    "l2" : "Mission",
+                    "l3" : "Approach",
+                    "l4" : "Effectiveness",
+                    "l5" : "Team",
+                    "l6" : "Research",
+                    "l7" : "Careers",
+                    "l8" : "Brand Guidelines",
+                    "l9" : "Shop",
+                    "l10" : "Press",
+                    "l11" : "Investors",
+                    "l12" : "Contact Us"
+                }
+            },
+            "column2" : {
+                "title" : "Products",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ for Schools",
+                    "l3" : "Language Test",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ for Business",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Special Offers"
+                }
+            },
+            "column3" : {
+                "title" : "Our Apps",
+                "links" : {
+                    "l1" : "Deskiñ for Android",
+                    "l2" : "Deskiñ for IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Help & Support",
+                "links" : {
+                    "l1" : "Deskiñ FAQ",
+                    "l2" : "Deskiñ for Schools FAQ",
+                    "l3" : "Deskiñ for Business FAQ",
+                    "l4" : "Language Test FAQ",
+                    "l9" : "Status"
+                }
+            },
+            "column5" : {
+                "title" : "Terms of Use & Privacy",
+                "links" : {
+                    "l1" : "Community Guidelines",
+                    "l2" : "Terms of Use",
+                    "l3" : "Privacy Policy"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Site language"
+        }
     },
-    
     "GLA" : {
-
-        "title" : "Y Gwladfa GLA"
-
+        "section1" : {
+            "column1" : {
+                "title" : "About",
+                "links" : {
+                    "l1" : "Courses",
+                    "l2" : "Mission",
+                    "l3" : "Approach",
+                    "l4" : "Effectiveness",
+                    "l5" : "Team",
+                    "l6" : "Research",
+                    "l7" : "Careers",
+                    "l8" : "Brand Guidelines",
+                    "l9" : "Shop",
+                    "l10" : "Press",
+                    "l11" : "Investors",
+                    "l12" : "Contact Us"
+                }
+            },
+            "column2" : {
+                "title" : "Products",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ for Schools",
+                    "l3" : "Language Test",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ for Business",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Special Offers"
+                }
+            },
+            "column3" : {
+                "title" : "Our Apps",
+                "links" : {
+                    "l1" : "Deskiñ for Android",
+                    "l2" : "Deskiñ for IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Help & Support",
+                "links" : {
+                    "l1" : "Deskiñ FAQ",
+                    "l2" : "Deskiñ for Schools FAQ",
+                    "l3" : "Deskiñ for Business FAQ",
+                    "l4" : "Language Test FAQ",
+                    "l9" : "Status"
+                }
+            },
+            "column5" : {
+                "title" : "Terms of Use & Privacy",
+                "links" : {
+                    "l1" : "Community Guidelines",
+                    "l2" : "Terms of Use",
+                    "l3" : "Privacy Policy"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Site language"
+        }
     },
-    
     "GLE" : {
-
-        "title" : "Y Gwladfa GLE"
-
+        "section1" : {
+            "column1" : {
+                "title" : "About",
+                "links" : {
+                    "l1" : "Courses",
+                    "l2" : "Mission",
+                    "l3" : "Approach",
+                    "l4" : "Effectiveness",
+                    "l5" : "Team",
+                    "l6" : "Research",
+                    "l7" : "Careers",
+                    "l8" : "Brand Guidelines",
+                    "l9" : "Shop",
+                    "l10" : "Press",
+                    "l11" : "Investors",
+                    "l12" : "Contact Us"
+                }
+            },
+            "column2" : {
+                "title" : "Products",
+                "links" : {
+                    "l1" : "Deskiñ",
+                    "l2" : "Deskiñ for Schools",
+                    "l3" : "Language Test",
+                    "l4" : "Audio",
+                    "l5" : "Deskiñ for Business",
+                    "l6" : "Super Deskiñ",
+                    "l7" : "Special Offers"
+                }
+            },
+            "column3" : {
+                "title" : "Our Apps",
+                "links" : {
+                    "l1" : "Deskiñ for Android",
+                    "l2" : "Deskiñ for IOS"
+                }
+            },
+            "column4" : {
+                "title" : "Help & Support",
+                "links" : {
+                    "l1" : "Deskiñ FAQ",
+                    "l2" : "Deskiñ for Schools FAQ",
+                    "l3" : "Deskiñ for Business FAQ",
+                    "l4" : "Language Test FAQ",
+                    "l9" : "Status"
+                }
+            },
+            "column5" : {
+                "title" : "Terms of Use & Privacy",
+                "links" : {
+                    "l1" : "Community Guidelines",
+                    "l2" : "Terms of Use",
+                    "l3" : "Privacy Policy"
+                }
+            }
+        },
+        "section2" : {
+            "title" : "Site language"
+        }
     }
-
 }

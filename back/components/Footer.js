@@ -12,189 +12,189 @@ export default function Footer({lang,data}) {
 
             <section className='flex md:flex-row flex-col md:justify-between justify-center py-16 md:max-w-[1000px] w-full px-8 gap-8'>
 
-                <Column title={"À propos"}>
+                <Column title={data.section1.column1.title}>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Cours</p>
+                        <p>{data.section1.column1.links.l1}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Mission</p>
+                        <p>{data.section1.column1.links.l2}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Approche</p>
+                        <p>{data.section1.column1.links.l3}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Efficacité</p>
+                        <p>{data.section1.column1.links.l4}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Equipe</p>
+                        <p>{data.section1.column1.links.l5}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Recherche</p>
+                        <p>{data.section1.column1.links.l6}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Carrières</p>
+                        <p>{data.section1.column1.links.l7}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Directives de la marque</p>
+                        <p>{data.section1.column1.links.l8}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Boutique</p>
+                        <p>{data.section1.column1.links.l9}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Presse</p>
+                        <p>{data.section1.column1.links.l10}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Investisseurs</p>
+                        <p>{data.section1.column1.links.l11}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Nous contacter</p>
-
-                    </Link>
-
-                </Column>
-
-                <Column title={"Produits"}>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Deskin</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Deskin for schools</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Deskin test de Breton</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Podcast</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Deskin for business</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Super Deskin</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-
-                        <p>Offre Super Deskin</p>
+                        <p>{data.section1.column1.links.l12}</p>
 
                     </Link>
 
                 </Column>
 
-                <Column title={"Nos applications"}>
+                <Column title={data.section1.column2.title}>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Deskin pour Android</p>
+                        <p>{data.section1.column2.links.l1}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
-                    
-                        <p>Deskin pour IOS</p>
+                        
+                        <p>{data.section1.column2.links.l2}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column2.links.l3}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column2.links.l4}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column2.links.l5}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column2.links.l6}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column2.links.l7}</p>
 
                     </Link>
 
                 </Column>
 
-                <Column title={"Aide et support"}>
+                <Column title={data.section1.column3.title}>
 
                     <Link href={`/fr/`}>
                     
-                        <p>FAQ sur Deskin</p>
+                        <p>{data.section1.column3.links.l1}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
                     
-                        <p>FAQ sur écoles</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>FAQ sur le Deskin Brezhoneg Test</p>
-
-                    </Link>
-
-                    <Link href={`/fr/`}>
-                    
-                        <p>Statut</p>
+                        <p>{data.section1.column3.links.l2}</p>
 
                     </Link>
 
                 </Column>
 
-                <Column title={"Conditions d'utilisation et confidentialité"}>
+                <Column title={data.section1.column4.title}>
 
                     <Link href={`/fr/`}>
                     
-                        <p>Règles de conduite de la communauté</p>
+                        <p>{data.section1.column4.links.l1}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
-                    
-                        <p>Conditions d'utilisation</p>
+                        
+                        <p>{data.section1.column4.links.l2}</p>
 
                     </Link>
 
                     <Link href={`/fr/`}>
-                    
-                        <p>Politique de confidentialité</p>
+                        
+                        <p>{data.section1.column4.links.l3}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column4.links.l4}</p>
+
+                    </Link>
+
+                </Column>
+
+                <Column title={data.section1.column5.title}>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column5.links.l1}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column5.links.l2}</p>
+
+                    </Link>
+
+                    <Link href={`/fr/`}>
+                        
+                        <p>{data.section1.column5.links.l3}</p>
 
                     </Link>
 
@@ -208,7 +208,7 @@ export default function Footer({lang,data}) {
                 
                 <div className='flex flex-col gap-6'>
 
-                    <h3 className='text-sm font-bold text-green-200'>Langue du site</h3>
+                    <h3 className='text-sm font-bold text-green-200'>{data.section2.title}</h3>
 
                     <div className='text-xs font-semibold text-green-300 flex flex-wrap gap-4'>
 

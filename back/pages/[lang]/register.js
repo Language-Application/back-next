@@ -5,8 +5,9 @@ import isPseudo from '../../functions/format/formapseudo'
 import isName from '../../functions/format/formaname'
 import isBirthDate from '../../functions/format/formabirthdate'
 import checkPassword from '../../functions/format/formapass'
+import { promises as fs } from 'fs'
 
-export default function Register({lang}) {
+export default function Register({lang,page}) {
 
     const router = useRouter()
 
@@ -59,7 +60,7 @@ export default function Register({lang}) {
 
                 <div className='w-screen h-screen'>
 
-                    <h2 className='text-base text-center font-bold'>Choisir une langue (1/3)</h2>
+                    <h2 className='text-base text-center font-bold'>{page.section1.title}</h2>
                     
                     <div className='flex flex-col w-full items-center justify-center'>
 
@@ -71,7 +72,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/breizh.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200'/>
                                     
-                                    <p className='text-sm font-white font-bold'>BRETON</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.BRE.toUpperCase()}</p>
 
                                 </div>
 
@@ -83,7 +84,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/kornow.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
-                                    <p className='text-sm font-white font-bold'>CORNIQUE</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.COR.toUpperCase()}</p>
 
                                 </div>
 
@@ -95,7 +96,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/man.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
-                                    <p className='text-sm font-white font-bold'>MANNOIS</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.GLV.toUpperCase()}</p>
 
                                 </div>
 
@@ -107,7 +108,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/cymru.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
-                                    <p className='text-sm font-white font-bold'>GALLOIS</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.WEL.toUpperCase()}</p>
 
                                 </div>
 
@@ -119,7 +120,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/scotland.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
-                                    <p className='text-sm font-white font-bold'>GAELIQUE ECOSSAIS</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.GLA.toUpperCase()}</p>
 
                                 </div>
 
@@ -131,7 +132,7 @@ export default function Register({lang}) {
 
                                     <img src='/img/flags/ireland.webp' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200'/>
                                     
-                                    <p className='text-sm font-white font-bold'>GAELIQUE IRLANDAIS</p>
+                                    <p className='text-sm font-white font-bold'>{page.section1.languages.GLE.toUpperCase()}</p>
 
                                 </div>
 
@@ -145,7 +146,7 @@ export default function Register({lang}) {
 
                 <div className='w-screen h-[calc(100vh-70px-24px)]'>
 
-                    <h2 className='text-base text-center font-bold'>Compléter mon profil (2/3)</h2>
+                    <h2 className='text-base text-center font-bold'>{page.section2.title}</h2>
                     
                     <div className='flex flex-col w-full h-full items-center justify-between gap-4 md:p-16 p-8'>
                         
@@ -153,15 +154,15 @@ export default function Register({lang}) {
                             
                             <div className='flex flex-col gap-4 w-[330px]'>
                                 
-                                <h3 className='text-sm font-bold'>Date de naissance</h3>
+                                <h3 className='text-sm font-bold'>{page.section2.div1.title}</h3>
 
                                 <div className='flex flex-row gap-4 max-w-[330px]'>
 
-                                    <input type='text' value={birthDate.day} onChange={(e)=>{setBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}),setBirthDateError(isBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}))}} placeholder='Jour' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.day!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
+                                    <input type='text' value={birthDate.day} onChange={(e)=>{setBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}),setBirthDateError(isBirthDate({year:birthDate.year,month:birthDate.month,day:e.target.value.substring(0,2)}))}} placeholder={page.section2.div1.day} className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.day!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
-                                    <input type='text' value={birthDate.month} onChange={(e)=>{setBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}),setBirthDateError(isBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}))}} placeholder='Mois' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.month!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
+                                    <input type='text' value={birthDate.month} onChange={(e)=>{setBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}),setBirthDateError(isBirthDate({year:birthDate.year,month:e.target.value.substring(0,2),day:birthDate.day}))}} placeholder={page.section2.div1.month} className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.month!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
-                                    <input type='number' value={birthDate.year} onChange={(e)=>{setBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}),setBirthDateError(isBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}))}} placeholder='Année' className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.year!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
+                                    <input type='text' value={birthDate.year} onChange={(e)=>{setBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}),setBirthDateError(isBirthDate({year:e.target.value.substring(0,4),month:birthDate.month,day:birthDate.day}))}} placeholder={page.section2.div1.year} className={`w-full border-b-[4px] text-sm text-black font-semibold h-[50px] border-[2px] border-gray-200 rounded-[15px] px-4 py-2.5 outline-none ${birthDate.year!==''?birthDateError.error===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
                                 </div>
 
@@ -169,11 +170,11 @@ export default function Register({lang}) {
                             
                             <div className='flex flex-col gap-4 w-[330px]'>
                                 
-                                <h3 className='text-sm font-bold'>Profil</h3>
+                                <h3 className='text-sm font-bold'>{page.section2.div2.title}</h3>
 
                                 <div className='flex flex-col gap-4'>
                             
-                                    <input type='text' value={name.substring(0,20)} onChange={(e)=>{setName(e.target.value),setNameError(isName(e.target.value))}} placeholder='Prénom' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${name!==''?nameError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
+                                    <input type='text' value={name.substring(0,20)} onChange={(e)=>{setName(e.target.value),setNameError(isName(e.target.value))}} placeholder={page.section2.div2.name} className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${name!==''?nameError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
                                     
                                     {/* <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder='Pseudonyme' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/> */}
                             
@@ -181,11 +182,11 @@ export default function Register({lang}) {
 
                                         <p className='pl-4'>@</p>
 
-                                        <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder='pseudonyme' className={`w-full h-full outline-none pr-4 py-2.5`}/>
+                                        <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder={page.section2.div2.pseudo} className={`w-full h-full outline-none pr-4 py-2.5`}/>
 
                                     </div>
 
-                                    <input type='text' value={email.toLowerCase()} onChange={(e)=>{setEmail(e.target.value),setEmailError(isEmail(e.target.value))}} placeholder='Adresse mail' className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${email!==''?emailError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
+                                    <input type='text' value={email.toLowerCase()} onChange={(e)=>{setEmail(e.target.value),setEmailError(isEmail(e.target.value))}} placeholder={page.section2.div2.email} className={`w-full text-sm text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${email!==''?emailError===true?'border-green-600':'border-red-600':'border-gray-200'}`}/>
 
                                 </div>
 
@@ -193,7 +194,7 @@ export default function Register({lang}) {
 
                         </div>
                         
-                        <button disabled={birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false} onClick={()=>setOnglet(onglet+1)} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false?'opacity-50':'opacity-1'}`}>Suivant</button>
+                        <button disabled={birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false} onClick={()=>setOnglet(onglet+1)} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${birthDateError?.error===false||pseudoError===false||nameError===false||emailError===false?'opacity-50':'opacity-1'}`}>{page.section2.button}</button>
 
                     </div>
                     
@@ -201,7 +202,7 @@ export default function Register({lang}) {
 
                 <div className='w-screen h-[calc(100vh-70px-24px)]'>
 
-                    <h2 className='text-base text-center font-bold'>Sécuriser mon profil (3/3)</h2>
+                    <h2 className='text-base text-center font-bold'>{page.section3.title}</h2>
                     
                     <div className='flex flex-col w-full h-full items-center justify-between gap-4 md:p-16 p-8'>
                         
@@ -209,7 +210,7 @@ export default function Register({lang}) {
                             
                             <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
-                                <input value={password} type={visiblePassword1?'text':'password'} onChange={(e)=>{setPassword(e.target.value),setPasswordError(checkPassword(e.target.value))}} placeholder='Mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
+                                <input value={password} type={visiblePassword1?'text':'password'} onChange={(e)=>{setPassword(e.target.value),setPasswordError(checkPassword(e.target.value))}} placeholder={page.section3.input1} className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
 
                                 <button onClick={()=>setVisiblePassword1(!visiblePassword1)} className='bg-white p-4 relative items-center justify-center'>
 
@@ -230,7 +231,7 @@ export default function Register({lang}) {
                             
                             <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
-                                <input value={passwordConfirm} type={visiblePassword2?'text':'password'} onChange={(e)=>{setPasswordConfirm(e.target.value)}} placeholder='Confirmer le mot de passe' className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
+                                <input value={passwordConfirm} type={visiblePassword2?'text':'password'} onChange={(e)=>{setPasswordConfirm(e.target.value)}} placeholder={page.section3.input2} className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
 
                                 <button onClick={()=>setVisiblePassword2(!visiblePassword2)} className='bg-white p-4 relative items-center justify-center'>
 
@@ -259,7 +260,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
                                         
-                                        <p>Au moins six caractères</p>
+                                        <p>{page.section3.rules.r1}</p>
 
                                     </div>
                                 
@@ -271,7 +272,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Au moins six caractères</p>
+                                        <p>{page.section3.rules.r1}</p>
     
                                     </div>
                                     
@@ -284,8 +285,8 @@ export default function Register({lang}) {
                                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="rgb(220 38 38)" className={`bg-white rounded-full`} viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
-                                        
-                                        <p>Au moins une majuscule</p>
+
+                                        <p>{page.section3.rules.r2}</p>
 
                                     </div>
                                 
@@ -297,7 +298,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Au moins une majuscule</p>
+                                        <p>{page.section3.rules.r2}</p>
     
                                     </div>
                                     
@@ -311,7 +312,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
                                         
-                                        <p>Au moins une minuscule</p>
+                                        <p>{page.section3.rules.r3}</p>
 
                                     </div>
                                 
@@ -323,7 +324,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Au moins une minuscule</p>
+                                        <p>{page.section3.rules.r3}</p>
     
                                     </div>
                                     
@@ -337,7 +338,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
                                         
-                                        <p>Au moins un chiffre</p>
+                                        <p>{page.section3.rules.r4}</p>
 
                                     </div>
                                 
@@ -349,7 +350,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Au moins un chiffre</p>
+                                        <p>{page.section3.rules.r4}</p>
     
                                     </div>
                                     
@@ -363,7 +364,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
                                         
-                                        <p>Au moins un caractère spécial</p>
+                                        <p>{page.section3.rules.r5}</p>
 
                                     </div>
                                 
@@ -375,7 +376,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Au moins un caractère spécial</p>
+                                        <p>{page.section3.rules.r5}</p>
     
                                     </div>
                                     
@@ -389,7 +390,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
                                         
-                                        <p>Les deux mots de passe correspondent</p>
+                                        <p>{page.section3.rules.r6}</p>
 
                                     </div>
                                 
@@ -401,7 +402,7 @@ export default function Register({lang}) {
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                                         </svg>
                                         
-                                        <p>Les deux mots de passe correspondent</p>
+                                        <p>{page.section3.rules.r6}</p>
     
                                     </div>
                                     
@@ -413,11 +414,11 @@ export default function Register({lang}) {
                         
                         <div className='flex flex-col gap-4 text-xs items-center text-center text-gray-400 max-w-[330px]'>
 
-                            <p>En te connectant à Duolingo, tu acceptes nos Conditions d'utilisation et notre Politique de confidentialité.</p>
-
-                            <p>La Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent.</p>
+                            <p>{page.section3.text1}</p>
+                            
+                            <p>{page.section3.text2}</p>
                         
-                            <button disabled={password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm?'opacity-50':'opacity-1'}`}>Créer mon compte</button>
+                            <button disabled={password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${password==""||passwordConfirm==""||passwordError?.[0]===false||password!==passwordConfirm?'opacity-50':'opacity-1'}`}>{page.section3.button}</button>
 
                         </div>
 
@@ -438,6 +439,8 @@ export default function Register({lang}) {
 export async function getServerSideProps(context) {
 
   const lang = context.query.lang
+
+  const pageData = JSON.parse(await fs.readFile(process.cwd() + '/text/pages/register.json', 'utf8'))
 
   // Si la langue est différente des exemples admis comme "fr" ou "en" ou "br", on redirige vers la page d'accueil
 
@@ -461,7 +464,9 @@ export async function getServerSideProps(context) {
 
       props: {
 
-        lang:lang.toUpperCase()
+        lang:lang.toUpperCase(),
+        
+        page: pageData[lang.toUpperCase()],
 
       }
 
