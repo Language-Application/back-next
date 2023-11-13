@@ -32,7 +32,7 @@ export default function Home({lang,footer,header,page}) {
     
               </button>
     
-              <button onClick={()=>router.push('/log-in')} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-green-600 text-green-600 font-bold'>
+              <button onClick={()=>router.push(`/${lang.toLowerCase()}/log-in`)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-green-600 text-green-600 font-bold'>
                   
                 <p>{page.button2.toUpperCase()}</p>
     

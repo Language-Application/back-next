@@ -264,7 +264,7 @@ export default function Footer({lang,data}) {
 
                 </div>
 
-                <img src='img/logo/hermine.jpg' alt='logo' className='w-[70px] h-[70px] border-[2px] rounded-[15px] border-green-200 self-start'/>
+                <img src='img/logo/LogoBretonFinalBeigeBrownBackgroundRounded.png' alt='logo' className='w-[70px] h-[70px] border-[0px] rounded-[15px] border-white self-start'/>
 
             </section>
 

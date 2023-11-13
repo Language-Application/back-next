@@ -31,7 +31,7 @@ export default function Register({lang,page}) {
 
                 </button>
 
-                <button onClick={()=>router.push('../')} className='flex flex-col h-full w-full items-end justify-center px-8'>
+                <button onClick={()=>router.push(`../${lang.toLowerCase()}`)} className='flex flex-col h-full w-full items-end justify-center px-8'>
                     
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
@@ -88,7 +88,7 @@ export default function Register({lang,page}) {
                             
                             <p>{page.text2}</p>
                         
-                            <button disabled={pseudo==""||password==""||pseudoError===true} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${pseudo==""||password==""||pseudoError===true}`}>{page.button}</button>
+                            <button disabled={pseudo==""||password==""||pseudoError===false} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${pseudo==""||password==""||pseudoError===false?"opacity-50":"opacity-1"}`}>{page.button}</button>
 
                         </div>
 
