@@ -1,0 +1,66 @@
+{
+    "FR" : {
+        "title" : "Accéder à mon profil",
+        "input1" : "Mot de passe",
+        "input2" : "Pseudonyme",
+        "text1" : "En te connectant à Duolingo, tu acceptes nos Conditions d'utilisation et notre Politique de confidentialité.",
+        "text2" : "La Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent.",
+        "button" : "Connexion"
+    },
+    "EN" : {
+        "title" : "Access my profile",
+        "input1" : "Password",
+        "input2" : "Pseudonym",
+        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
+        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "button" : "Log in"
+    },
+    "BRE" : {
+        "title" : "Access my profile",
+        "input1" : "Password",
+        "input2" : "Pseudonym",
+        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
+        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "button" : "Log in"
+    },
+    "WEL" : {
+        "title" : "Access my profile",
+        "input1" : "Cyfrinair",
+        "input2" : "Enw defnyddiwr",
+        "text1" : "Wrth fewngofnodi i Duolingo, rydych yn derbyn ein Telerau Defnyddio a'n Polisi Preifatrwydd.",
+        "text2" : "Mae Polisi Preifatrwydd a Thelerau Defnyddio Google yn berthnasol.",
+        "button" : "Mewngofnodi"
+    },
+    "COR" : {
+        "title" : "Access my profile",
+        "input1" : "Password",
+        "input2" : "Pseudonym",
+        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
+        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "button" : "Log in"
+    },
+    "GLV" : {
+        "title" : "Access my profile",
+        "input1" : "Passoort",
+        "input2" : "Pseudonym",
+        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
+        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "button" : "Log in"
+    },
+    "GLA" : {
+        "title" : "Access my profile",
+        "input1" : "Password",
+        "input2" : "Pseudonym",
+        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
+        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "button" : "Log in"
+    },
+    "GLE" : {
+        "title" : "Access my profile",
+        "input1" : "Pasfhocal",
+        "input2" : "Ainm úsáideora",
+        "text1" : "Trí logáil isteach i Duolingo, glacann tú leis na Téarmaí Úsáide agus an Polasaí Príobháideachta.",
+        "text2" : "Baineann Polasaí Príobháideachta agus Téarmaí Úsáide Google leis.",
+        "button" : "Logáil isteach"
+    }
+}
