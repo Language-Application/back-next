@@ -264,7 +264,7 @@ export default function Footer({lang,data}) {
 
                 </div>
 
-                <img src='https://design.duolingo.com/86230c9ad10d9f08b785.svg' alt='logo' className='w-[70px] h-[70px] border-[2px] rounded-[15px] border-green-200 self-start'/>
+                <img src='img/logo/hermine.jpg' alt='logo' className='w-[70px] h-[70px] border-[2px] rounded-[15px] border-green-200 self-start'/>
 
             </section>
 

@@ -26,7 +26,7 @@ export default function Home({lang,footer,header,page}) {
             
             <div className='flex flex-col gap-4 w-full md:justify-center items-center'>
   
-              <button onClick={()=>router.push('/register')} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>
+              <button onClick={()=>router.push(`/${lang.toLowerCase()}/register`)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold'>
                   
                 <p>{page.button1.toUpperCase()}</p>
     
