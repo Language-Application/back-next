@@ -66,9 +66,9 @@ export default function Register({lang,page}) {
 
                         <div className='flex flex-wrap h-full max-w-[390px] items-start gap-4 justify-between p-8 overflow-y-scroll mb-16'>
                                 
-                            <button onClick={()=>{setLangLearning('BRE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] max-w-[155px] w-[145px]'>
+                            <button onClick={()=>{setLangLearning('BRE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/breizh.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200'/>
                                     
@@ -78,9 +78,9 @@ export default function Register({lang,page}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>{setLangLearning('COR'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('COR'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full opacity-50 max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/kornow.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
@@ -90,9 +90,9 @@ export default function Register({lang,page}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>{setLangLearning('GLV'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLV'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full opacity-50 max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/man.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
@@ -102,9 +102,9 @@ export default function Register({lang,page}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>{setLangLearning('WEL'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('WEL'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full opacity-50 max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/cymru.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
@@ -114,9 +114,9 @@ export default function Register({lang,page}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>{setLangLearning('GLA'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLA'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full opacity-50 max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/scotland.png' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200 opacity-50'/>
                                     
@@ -126,9 +126,9 @@ export default function Register({lang,page}) {
 
                             </button>
                                 
-                            <button disabled={true} onClick={()=>{setLangLearning('GLE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-[190px] opacity-50 max-w-[155px] w-[145px]'>
+                            <button disabled={true} onClick={()=>{setLangLearning('GLE'),setOnglet(onglet+1)}} className='flex flex-col p-8 gap-4 items-center border-[2px] border-b-[4px] border-gray-200 rounded-[15px] h-full opacity-50 max-w-[155px] w-[145px]'>
                                 
-                                <div className='h-full justify-between flex flex-col'>
+                                <div className='h-full justify-between flex flex-col gap-4'>
 
                                     <img src='/img/flags/ireland.webp' className='flex flex-col border-[2px] rounded-[15px] w-[90px] h-[60px] border-gray-200'/>
                                     

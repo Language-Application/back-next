@@ -8,7 +8,7 @@ export default function Footer({lang,data}) {
     
     return (
     
-        <footer className='flex flex-col w-screen bg-[#381C11] items-center border-t-[2px] border-green-200'>
+        <footer className='flex flex-col w-screen bg-[#381C11] items-center border-t-[2px] border-[#E4DDC3]'>
 
             <section className='flex md:flex-row flex-col md:justify-between justify-center py-16 md:max-w-[1000px] w-full px-8 gap-8'>
 
@@ -202,15 +202,15 @@ export default function Footer({lang,data}) {
 
             </section>
 
-            <hr className='flex flex-row border-green-200 border-t-[2px] md:max-w-[1000px-64px] px-8 w-[calc(1000px-64px)]'/>
+            <hr className='flex flex-row border-[#E4DDC3] border-t-[2px] md:max-w-[1000px-64px] px-8 w-[calc(1000px-64px)]'/>
 
             <section className='flex md:flex-row flex-col md:gap-8 gap-16 justify-between py-16 md:max-w-[1000px] px-8 items-start w-full'>
                 
                 <div className='flex flex-col gap-6'>
 
-                    <h3 className='text-sm font-bold text-green-200'>{data.section2.title}</h3>
+                    <h3 className='text-sm font-bold text-[#E4DDC3]'>{data.section2.title}</h3>
 
-                    <div className='text-xs font-semibold text-green-300 flex flex-wrap gap-4'>
+                    <div className='text-xs font-semibold text-[#E4DDC3] flex flex-wrap gap-4'>
 
                         <button onClick={()=>{router.push('/fr')}}>
                                 
@@ -264,15 +264,15 @@ export default function Footer({lang,data}) {
 
                 </div>
 
-                <img src='img/logo/LogoBretonFinalBeigeBrownBackgroundRounded.png' alt='logo' className='w-[70px] h-[70px] border-[0px] rounded-[15px] border-white self-start'/>
+                <img src='img/logo/LogoBretonFinalBeigeRounded10.png' alt='logo' className='w-[70px] h-[70px] border-[0px] rounded-[15px] border-white self-start'/>
 
             </section>
 
-            <hr className='flex flex-row border-green-200 border-t-[2px] md:max-w-[1000px-64px] px-8 w-[calc(1000px-64px)]'/>
+            <hr className='flex flex-row border-[#E4DDC3] border-t-[2px] md:max-w-[1000px-64px] px-8 w-[calc(1000px-64px)]'/>
 
             <section className='flex md:flex-row flex-col md:gap-8 gap-16 justify-between py-8 md:max-w-[1000px] px-8 items-start w-full'>
 
-                <div className='flex flex-row text-xs font-semibold text-green-300 justify-between w-full gap-4'>
+                <div className='flex flex-row text-xs font-semibold text-[#E4DDC3] justify-between w-full gap-4'>
                     
                     <div className='flex flex-row gap-4'>
 
@@ -326,7 +326,7 @@ export default function Footer({lang,data}) {
 
                     </div>
                         
-                    <p className='text-xs font-bold'>© {new Date().getFullYear()} Dezhel SAS</p>
+                    <p className='text-xs font-bold'>© {new Date().getFullYear()} Dezhel</p>
 
                 </div>
 

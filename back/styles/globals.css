@@ -39,3 +39,57 @@ footer a:hover {
   opacity: 1;
   transition: all 0.2s ease-in-out;
 }
+
+#title {
+  font-family: 'Brito Variable Regular';
+}
+
+
+@font-face {
+  font-family: 'Brito Thin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/3f3aeb536293f85d487f2870db5998ccf375b496.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/3f3aeb536293f85d487f2870db5998ccf375b496.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Extra Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/7652bac579111f3d5fb72681318f1b1c320f35d4.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/7652bac579111f3d5fb72681318f1b1c320f35d4.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/d722d528cbf807e4b8cc899757c54558fc96616f.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/d722d528cbf807e4b8cc899757c54558fc96616f.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/248eec60d8be72531fd0ec5ec85a9b279238ea77.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/248eec60d8be72531fd0ec5ec85a9b279238ea77.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/8e3b362f858092cd96454aa2e5f5d6c2ca231dba.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/8e3b362f858092cd96454aa2e5f5d6c2ca231dba.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/f51b68af08189a75fe2b213db4c18c513fbd2300.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/f51b68af08189a75fe2b213db4c18c513fbd2300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Brito Variable Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.fontdue.com/skritur/fonts/d8cfbe0de6de595d05527c4eac3846821af34376.woff2') format('woff2'), url('https://fonts.fontdue.com/skritur/fonts/d8cfbe0de6de595d05527c4eac3846821af34376.woff') format('woff');
+}

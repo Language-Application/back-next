@@ -4,9 +4,9 @@ export default function Column({children,title}) {
 
         <div className='flex flex-col gap-6 md:w-[15%]'>
 
-            <h3 className='text-base font-bold text-green-200'>{title}</h3>
+            <h3 className='text-base font-bold text-[#E4DDC3]'>{title}</h3>
             
-            <div className="flex flex-col gap-4 text-sm font-semibold text-green-300">
+            <div className="flex flex-col gap-4 text-sm font-semibold text-[#E4DDC3]">
 
                 {children}
 

@@ -6,14 +6,10 @@ import { promises as fs } from 'fs'
 export default function Register({lang,page}) {
 
     const router = useRouter()
-
     const [onglet, setOnglet] = useState(1)
-
     const [visiblePassword1, setVisiblePassword1] =useState(false)
-
     const [pseudo, setPseudo] = useState('')
     const [password, setPassword] = useState('')
-    
     const [pseudoError, setPseudoError] = useState(false)
 
     
