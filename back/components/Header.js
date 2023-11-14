@@ -38,9 +38,9 @@ export default function Header({lang,data}) {
         
         <div className='flex flex-row'>
 
-          <img src="/duo.png" alt="logo" className="h-8 w-8 mr-2"/>
+          <img src="/img/logo/LogoBretonFinalBeigeBrownBackgroundRounded.png" alt="logo" className="h-[50px] w-[50px] mr-2"/>
           
-          <h1 className={`text-3xl font-bold text-green-600 md:flex ${isScrolled?'hidden':''}`}>deskiñ</h1>
+          <h1 className={`text-3xl font-bold text-green-600 md:flex ${isScrolled?'hidden':''}`}>Dezhel</h1>
 
         </div>
 

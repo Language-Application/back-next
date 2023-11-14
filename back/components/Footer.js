@@ -8,7 +8,7 @@ export default function Footer({lang,data}) {
     
     return (
     
-        <footer className='flex flex-col w-screen bg-green-600 items-center border-t-[2px] border-green-200'>
+        <footer className='flex flex-col w-screen bg-[#381C11] items-center border-t-[2px] border-green-200'>
 
             <section className='flex md:flex-row flex-col md:justify-between justify-center py-16 md:max-w-[1000px] w-full px-8 gap-8'>
 
