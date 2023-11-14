@@ -326,7 +326,7 @@ export default function Footer({lang,data}) {
 
                     </div>
                         
-                    <p className='text-xs font-bold'>© {new Date().getFullYear()} Deskiñ SAS</p>
+                    <p className='text-xs font-bold'>© {new Date().getFullYear()} Dezhel SAS</p>
 
                 </div>
 

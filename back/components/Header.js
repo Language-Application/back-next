@@ -32,19 +32,19 @@ export default function Header({lang,data}) {
 
   return (
 
-    <nav className={`flex fixed top-0 items-center justify-center bg-white px-4 w-full z-10 h-[70px] transition-all duration-300 ease-in-out border-b-[2px] ${scroll>0?'border-gray-200':'border-white'}`}>
+    <nav className={`flex fixed top-0 items-center justify-center bg-[#E4DDC3] px-4 w-full z-10 h-[70px] transition-all duration-300 ease-in-out border-b-[2px] ${scroll>0?'border-gray-200':'border-white'}`}>
       
       <div className={`flex flex-row items-center w-full max-w-[calc(1000px-64px)] ${isScrolled?'justify-between':'justify-center'} md:justify-between`}>
         
-        <div className='flex flex-row'>
+        <div className='flex flex-row items-center'>
 
-          <img src="/img/logo/LogoBretonFinalBeigeBrownBackgroundRounded.png" alt="logo" className="h-[50px] w-[50px] mr-2"/>
+          <img src="/img/logo/LogoBretonFinalBeigeBrownBackgroundRounded.png" alt="logo" className={`h-[50px] w-[50px] mr-2 ${isScrolled?'flex':'hidden'}`}/>
           
-          <h1 className={`text-3xl font-bold text-green-600 md:flex ${isScrolled?'hidden':''}`}>Dezhel</h1>
+          <h1 className={`text-3xl font-bold text-[#381C11] md:flex ${isScrolled?'hidden':''}`}>Dezhel</h1>
 
         </div>
 
-        <button className={`text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold md:flex ${isScrolled?'':'hidden'}`}>
+        <button className={`text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-[#381C11] text-white font-bold md:flex ${isScrolled?'':'hidden'}`}>
             
           <p>C'EST PARTI !</p>
 

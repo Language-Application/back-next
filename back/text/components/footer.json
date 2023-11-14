@@ -21,28 +21,28 @@
             "column2" : {
                 "title" : "Produits",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ pour les écoles",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel pour les écoles",
                     "l3" : "Test de langue",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ pour les entreprises",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel pour les entreprises",
+                    "l6" : "Super Dezhel",
                     "l7" : "Offres spéciales"
                 }
             },
             "column3" : {
                 "title" : "Nos applications",
                 "links" : {
-                    "l1" : "Deskiñ pour Android",
-                    "l2" : "Deskiñ pour IOS"
+                    "l1" : "Dezhel pour Android",
+                    "l2" : "Dezhel pour IOS"
                 }
             },
             "column4" : {
                 "title" : "Aide et support",
                 "links" : {
-                    "l1" : "FAQ sur Deskiñ",
-                    "l2" : "FAQ sur Deskiñ pour les écoles",
-                    "l3" : "FAQ sur Deskiñ pour les entreprises",
+                    "l1" : "FAQ sur Dezhel",
+                    "l2" : "FAQ sur Dezhel pour les écoles",
+                    "l3" : "FAQ sur Dezhel pour les entreprises",
                     "l4" : "FAQ sur le test de langue",
                     "l9" : "Statut"
                 }
@@ -82,28 +82,28 @@
             "column2" : {
                 "title" : "Products",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ for Schools",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel for Schools",
                     "l3" : "Language Test",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ for Business",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel for Business",
+                    "l6" : "Super Dezhel",
                     "l7" : "Special Offers"
                 }
             },
             "column3" : {
                 "title" : "Our Apps",
                 "links" : {
-                    "l1" : "Deskiñ for Android",
-                    "l2" : "Deskiñ for IOS"
+                    "l1" : "Dezhel for Android",
+                    "l2" : "Dezhel for IOS"
                 }
             },
             "column4" : {
                 "title" : "Help & Support",
                 "links" : {
-                    "l1" : "Deskiñ FAQ",
-                    "l2" : "Deskiñ for Schools FAQ",
-                    "l3" : "Deskiñ for Business FAQ",
+                    "l1" : "Dezhel FAQ",
+                    "l2" : "Dezhel for Schools FAQ",
+                    "l3" : "Dezhel for Business FAQ",
                     "l4" : "Language Test FAQ",
                     "l9" : "Status"
                 }
@@ -143,28 +143,28 @@
             "column2" : {
                 "title" : "Produioù",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ evit ar skolioù",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel evit ar skolioù",
                     "l3" : "Prouad yezhel",
                     "l4" : "Aodio",
-                    "l5" : "Deskiñ evit an embregerezhioù",
-                    "l6" : "Dreist Deskiñ",
+                    "l5" : "Dezhel evit an embregerezhioù",
+                    "l6" : "Dreist Dezhel",
                     "l7" : "Kinnigoù a-ratozh"
                 }
             },
             "column3" : {
                 "title" : "Hon arloadoù",
                 "links" : {
-                    "l1" : "Deskiñ evit Android",
-                    "l2" : "Deskiñ evit IOS"
+                    "l1" : "Dezhel evit Android",
+                    "l2" : "Dezhel evit IOS"
                 }
             },
             "column4" : {
                 "title" : "Skoazell ha skor",
                 "links" : {
-                    "l1" : "FAG e Deskiñ",
-                    "l2" : "FAG e Deskiñ evit ar skolioù",
-                    "l3" : "FAG e Deskiñ evit an embregerezhioù",
+                    "l1" : "FAG e Dezhel",
+                    "l2" : "FAG e Dezhel evit ar skolioù",
+                    "l3" : "FAG e Dezhel evit an embregerezhioù",
                     "l4" : "FAG war ar prouad yezhel",
                     "l9" : "Statud"
                 }
@@ -204,28 +204,28 @@
             "column2" : {
                 "title" : "Cynhyrchion",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ ar gyfer ysgolion",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel ar gyfer ysgolion",
                     "l3" : "Prawf iaith",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ ar gyfer cwmnïau",
-                    "l6" : "Gwych Deskiñ",
+                    "l5" : "Dezhel ar gyfer cwmnïau",
+                    "l6" : "Gwych Dezhel",
                     "l7" : "Cynigion arbennig"
                 }
             },
             "column3" : {
                 "title" : "Ein apps",
                 "links" : {
-                    "l1" : "Deskiñ ar gyfer Android",
-                    "l2" : "Deskiñ ar gyfer IOS"
+                    "l1" : "Dezhel ar gyfer Android",
+                    "l2" : "Dezhel ar gyfer IOS"
                 }
             },
             "column4" : {
                 "title" : "Cymorth a chefnogaeth",
                 "links" : {
-                    "l1" : "CC am  Deskiñ",
-                    "l2" : "CC am Deskiñ ar gyfer ysgolion",
-                    "l3" : "CC am Deskiñ ar gyfer cwmnïau",
+                    "l1" : "CC am  Dezhel",
+                    "l2" : "CC am Dezhel ar gyfer ysgolion",
+                    "l3" : "CC am Dezhel ar gyfer cwmnïau",
                     "l4" : "CC am y prawf iaith",
                     "l9" : "Statws"
                 }
@@ -265,28 +265,28 @@
             "column2" : {
                 "title" : "Products",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ for Schools",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel for Schools",
                     "l3" : "Language Test",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ for Business",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel for Business",
+                    "l6" : "Super Dezhel",
                     "l7" : "Special Offers"
                 }
             },
             "column3" : {
                 "title" : "Our Apps",
                 "links" : {
-                    "l1" : "Deskiñ for Android",
-                    "l2" : "Deskiñ for IOS"
+                    "l1" : "Dezhel for Android",
+                    "l2" : "Dezhel for IOS"
                 }
             },
             "column4" : {
                 "title" : "Help & Support",
                 "links" : {
-                    "l1" : "Deskiñ FAQ",
-                    "l2" : "Deskiñ for Schools FAQ",
-                    "l3" : "Deskiñ for Business FAQ",
+                    "l1" : "Dezhel FAQ",
+                    "l2" : "Dezhel for Schools FAQ",
+                    "l3" : "Dezhel for Business FAQ",
                     "l4" : "Language Test FAQ",
                     "l9" : "Status"
                 }
@@ -326,28 +326,28 @@
             "column2" : {
                 "title" : "Products",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ for Schools",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel for Schools",
                     "l3" : "Language Test",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ for Business",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel for Business",
+                    "l6" : "Super Dezhel",
                     "l7" : "Special Offers"
                 }
             },
             "column3" : {
                 "title" : "Our Apps",
                 "links" : {
-                    "l1" : "Deskiñ for Android",
-                    "l2" : "Deskiñ for IOS"
+                    "l1" : "Dezhel for Android",
+                    "l2" : "Dezhel for IOS"
                 }
             },
             "column4" : {
                 "title" : "Help & Support",
                 "links" : {
-                    "l1" : "Deskiñ FAQ",
-                    "l2" : "Deskiñ for Schools FAQ",
-                    "l3" : "Deskiñ for Business FAQ",
+                    "l1" : "Dezhel FAQ",
+                    "l2" : "Dezhel for Schools FAQ",
+                    "l3" : "Dezhel for Business FAQ",
                     "l4" : "Language Test FAQ",
                     "l9" : "Status"
                 }
@@ -387,28 +387,28 @@
             "column2" : {
                 "title" : "Products",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ for Schools",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel for Schools",
                     "l3" : "Language Test",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ for Business",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel for Business",
+                    "l6" : "Super Dezhel",
                     "l7" : "Special Offers"
                 }
             },
             "column3" : {
                 "title" : "Our Apps",
                 "links" : {
-                    "l1" : "Deskiñ for Android",
-                    "l2" : "Deskiñ for IOS"
+                    "l1" : "Dezhel for Android",
+                    "l2" : "Dezhel for IOS"
                 }
             },
             "column4" : {
                 "title" : "Help & Support",
                 "links" : {
-                    "l1" : "Deskiñ FAQ",
-                    "l2" : "Deskiñ for Schools FAQ",
-                    "l3" : "Deskiñ for Business FAQ",
+                    "l1" : "Dezhel FAQ",
+                    "l2" : "Dezhel for Schools FAQ",
+                    "l3" : "Dezhel for Business FAQ",
                     "l4" : "Language Test FAQ",
                     "l9" : "Status"
                 }
@@ -448,28 +448,28 @@
             "column2" : {
                 "title" : "Products",
                 "links" : {
-                    "l1" : "Deskiñ",
-                    "l2" : "Deskiñ for Schools",
+                    "l1" : "Dezhel",
+                    "l2" : "Dezhel for Schools",
                     "l3" : "Language Test",
                     "l4" : "Audio",
-                    "l5" : "Deskiñ for Business",
-                    "l6" : "Super Deskiñ",
+                    "l5" : "Dezhel for Business",
+                    "l6" : "Super Dezhel",
                     "l7" : "Special Offers"
                 }
             },
             "column3" : {
                 "title" : "Our Apps",
                 "links" : {
-                    "l1" : "Deskiñ for Android",
-                    "l2" : "Deskiñ for IOS"
+                    "l1" : "Dezhel for Android",
+                    "l2" : "Dezhel for IOS"
                 }
             },
             "column4" : {
                 "title" : "Help & Support",
                 "links" : {
-                    "l1" : "Deskiñ FAQ",
-                    "l2" : "Deskiñ for Schools FAQ",
-                    "l3" : "Deskiñ for Business FAQ",
+                    "l1" : "Dezhel FAQ",
+                    "l2" : "Dezhel for Schools FAQ",
+                    "l3" : "Dezhel for Business FAQ",
                     "l4" : "Language Test FAQ",
                     "l9" : "Status"
                 }
