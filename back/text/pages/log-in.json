@@ -16,12 +16,12 @@
         "button" : "Log in"
     },
     "BRE" : {
-        "title" : "Access my profile",
-        "input1" : "Password",
-        "input2" : "Pseudonym",
-        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
-        "text2" : "Google's Privacy Policy and Terms of Use apply.",
-        "button" : "Log in"
+        "title" : "Mont d'am profil",
+        "input1" : "Ger-tremen",
+        "input2" : "Lesanv",
+        "text1" : "En ur lakaat hoc'h anv war Dezhel e asantit d'ar Divizoù implijout ha d'ar Politikerezh prevezded.",
+        "text2" : "Ar politikerezh prevezded ha Divizoù implijout Google a dalvez ivez.",
+        "button" : "Kevreadenn"
     },
     "WEL" : {
         "title" : "Access my profile",
@@ -35,8 +35,8 @@
         "title" : "Access my profile",
         "input1" : "Password",
         "input2" : "Pseudonym",
-        "text1" : "By logging into Duolingo, you accept our Terms of Use and Privacy Policy.",
-        "text2" : "Google's Privacy Policy and Terms of Use apply.",
+        "text1" : "En ur lakaat hoc'h anv war Dezhel e asantit d'ar Divizoù implijout ha d'ar Politikerezh prevezded.",
+        "text2" : "Ar politikerezh prevezded ha Divizoù implijout Google a dalvez ivez.",
         "button" : "Log in"
     },
     "GLV" : {

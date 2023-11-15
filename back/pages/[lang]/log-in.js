@@ -15,13 +15,13 @@ export default function Register({lang,page}) {
     
     return (
         
-        <div className='w-screen h-screen bg-blue-900 overflow-hidden'>
+        <div className='w-screen h-screen bg-[#E4DDC3] text-[#381C11] overflow-hidden'>
             
             <div className='flex flex-row justify-between w-full h-[70px]'>
 
                 <button disabled={onglet===1} onClick={()=>setOnglet(onglet-1)} className={`flex flex-col h-full w-full items-start justify-center px-8 transition-all duration-300 ease-in-out ${onglet===1?'opacity-0':'opacity-1'}`}>
                     
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#381C11" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                     </svg>
 
@@ -29,7 +29,7 @@ export default function Register({lang,page}) {
 
                 <button onClick={()=>router.push(`../${lang.toLowerCase()}`)} className='flex flex-col h-full w-full items-end justify-center px-8'>
                     
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#381C11" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg>
 
@@ -47,7 +47,7 @@ export default function Register({lang,page}) {
                         
                         <div className='flex flex-col gap-4 items-center w-full'>
                             
-                            <div className={`flex flex-row items-center border-b-[4px] bg-white w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px] text-sm text-black font-semibold  transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}>
+                            <div className={`flex flex-row items-center border-b-[4px] bg-white w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px] text-base text-black font-semibold  transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}>
 
                                 <p className='pl-4'>@</p>
 
@@ -57,7 +57,7 @@ export default function Register({lang,page}) {
                             
                             <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
-                                <input value={password} type={visiblePassword1?'text':'password'} onChange={(e)=>{setPassword(e.target.value)}} placeholder={page.input1} className={`w-full h-full outline-none px-4 py-2.5 text-sm text-black font-semibold`}/>
+                                <input value={password} type={visiblePassword1?'text':'password'} onChange={(e)=>{setPassword(e.target.value)}} placeholder={page.input1} className={`w-full h-full rounded-none outline-none px-4 py-2.5 text-base text-black font-semibold`}/>
 
                                 <button onClick={()=>setVisiblePassword1(!visiblePassword1)} className='bg-white p-4 relative items-center justify-center'>
 
@@ -84,7 +84,7 @@ export default function Register({lang,page}) {
                             
                             <p>{page.text2}</p>
                         
-                            <button disabled={pseudo==""||password==""||pseudoError===false} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-green-500 border-green-600 text-white font-bold transition-all duration-300 ease-in-out ${pseudo==""||password==""||pseudoError===false?"opacity-50":"opacity-1"}`}>{page.button}</button>
+                            <button disabled={pseudo==""||password==""||pseudoError===false} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-base flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-white font-bold transition-all duration-300 ease-in-out ${pseudo==""||password==""||pseudoError===false?"opacity-50":"opacity-1"}`}>{page.button}</button>
 
                         </div>
 

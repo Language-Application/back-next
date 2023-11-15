@@ -7,7 +7,7 @@ export default function Page({children,lang,footer,header}) {
     
     return (
 
-        <main className='flex flex-col max-w-screen  relative bg-[#E4DDC3] h-screen overflow-x-hidden'>
+        <main className='flex flex-col relative bg-[#E4DDC3] overflow-x-hidden'>
 
             <Header lang={lang} data={header}/>
             
