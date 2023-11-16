@@ -1,17 +1,38 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import isPseudo from '../../functions/format/formapseudo'
+import isEmail from '../../functions/format/formamail'
 import { promises as fs } from 'fs'
+import checkconnexion from '../../functions/utils/checkconnexion'
+import { connectUser } from '../../functions/interface/get/user/getUser'
+import { jenerate } from '../../functions/format/jenerate'
 
 export default function Register({lang,page}) {
 
     const router = useRouter()
     const [onglet, setOnglet] = useState(1)
     const [visiblePassword1, setVisiblePassword1] =useState(false)
-    const [pseudo, setPseudo] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [pseudoError, setPseudoError] = useState(false)
+    const [emailError, setEmailError] = useState(false)
+    const [loader, setLoader] = useState(false)
 
+    useEffect(()=>{
+        checkconnexion(router)
+    },[])
+
+    async function connectuser(){
+        setLoader(true)
+        await connectUser(email,password)
+        .then((res)=>{
+            if(res!==false){
+                jenerate(res)
+                router.push(`/profile/@${res.pseudo}`)
+            }else{
+                setLoader(false)
+                alert("La connexion à votre compte a échoué. Veuillez réessayer.")
+            }
+        })
+    }
     
     return (
         
@@ -46,14 +67,8 @@ export default function Register({lang,page}) {
                     <div className='flex flex-col w-full h-full items-center justify-between gap-4 md:p-16 p-8'>
                         
                         <div className='flex flex-col gap-4 items-center w-full'>
-                            
-                            <div className={`flex flex-row items-center border-b-[4px] bg-white w-full h-[50px] border-[2px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px] text-base text-black font-semibold  transition-all duration-300 ease-in-out ${pseudo!==''?pseudoError===true?'border-green-600':'border-red-600':'border-gray-200'}`}>
 
-                                <p className='pl-4'>@</p>
-
-                                <input type='text' value={pseudo.toLowerCase().substring(0,20)} onChange={(e)=>{setPseudo(e.target.value),setPseudoError(isPseudo(e.target.value))}} placeholder={page.input2} className={`w-full h-full outline-none pr-4 py-2.5`}/>
-
-                            </div>
+                            <input type='text' value={email.toLowerCase()} onChange={(e)=>{setEmail(e.target.value),setEmailError(isEmail(e.target.value))}} placeholder={page.input2} className={`w-full text-base text-black font-semibold h-[50px] border-[2px] border-b-[4px] rounded-[15px] px-4 py-2.5 max-w-[330px] outline-none transition-all duration-300 ease-in-out ${email!==''?emailError===true?'border-green-600':'border-red-600':'border-[#381C11]'}`}/>
                             
                             <div className='flex flex-row w-full h-[50px] border-[2px] border-b-[4px] border-gray-200 rounded-[15px] overflow-hidden max-w-[330px]'>
 
@@ -84,7 +99,7 @@ export default function Register({lang,page}) {
                             
                             <p>{page.text2}</p>
                         
-                            <button disabled={pseudo==""||password==""||pseudoError===false} onClick={()=>router.push('../')} className={`flex w-full max-w-[330px] text-base flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-white font-bold transition-all duration-300 ease-in-out ${pseudo==""||password==""||pseudoError===false?"opacity-50":"opacity-1"}`}>{page.button}</button>
+                            <button disabled={email==""||password==""||emailError===false}  onClick={()=>connectuser()} className={`flex w-full max-w-[330px] text-base flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-white font-bold transition-all duration-300 ease-in-out ${email==""||password==""||emailError===false?"opacity-50":"opacity-1"}`}>{page.button}</button>
 
                         </div>
 

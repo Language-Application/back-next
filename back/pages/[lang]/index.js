@@ -1,10 +1,16 @@
 import Page from '../../components/Page'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { promises as fs } from 'fs'
+import checkconnexion from '../../functions/utils/checkconnexion'
 
 export default function Home({lang,footer,header,page}) {
 
   const router = useRouter()
+
+  useEffect(()=>{
+      checkconnexion(router)
+  },[])
 
   return (
   

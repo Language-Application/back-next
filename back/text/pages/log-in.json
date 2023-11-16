@@ -2,7 +2,7 @@
     "FR" : {
         "title" : "Accéder à mon profil",
         "input1" : "Mot de passe",
-        "input2" : "Pseudonyme",
+        "input2" : "Adresse e-mail",
         "text1" : "En te connectant à Duolingo, tu acceptes nos Conditions d'utilisation et notre Politique de confidentialité.",
         "text2" : "La Politique de confidentialité et les Conditions d'utilisation de Google s'appliquent.",
         "button" : "Connexion"
