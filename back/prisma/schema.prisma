@@ -8,6 +8,7 @@ datasource db {
 }
 
 model User {
+
     id                      Int              @id @unique @default(autoincrement())            //  Id du compte
     createdAt               DateTime         @default(now())                                  //  Date de création du compte
     updatedAt               DateTime         @default(now())                                  //  Date de modification du compte
@@ -22,20 +23,22 @@ model User {
     pseudo                  String           @unique                                          //  Pseudonyme de l'utilisateur
     email                   String           @unique                                          //  Email de l'utilisateur
     emailconfirmed          Boolean          @default(false)                                  //  Etat de confirmation de l'email de l'utilisateur
-    phone                   String           @unique                                          //  Numéro de téléphone de l'utilisateur
-    phoneconfirmed          Boolean          @default(false)                                  //  Etat de confirmation du numéro de téléphone de l'utilisateur  
+    phone                   String?          @unique                                          //  Numéro de téléphone de l'utilisateur
+    phoneconfirmed          Boolean?         @default(false)                                  //  Etat de confirmation du numéro de téléphone de l'utilisateur  
     birthdate               DateTime                                                          //  Date de naissance de l'utilisateur
-    pic                     String           @default("/img/defaultprofilepic.png")           //  Photo de l'utilisateur
+    pic                     String?          @default("/img/defaultprofilepic.png")           //  Photo de l'utilisateur
     password                String                                                            //  Mot de passe de l'utilisateur
+    spoken                  Langue                                                            //  Langue parlée par l'utilisateur
     
-    pays                    Pays                                                              //  Pays de l'utilisateur
-    codepostal              String                                                            //  Code postal de l'utilisateur
-    rue                     String                                                            //  Rue de l'utilisateur
-    ville                   String                                                            //  Ville de l'utilisateur
-    complementadresse       String                                                            //  Complément d'adresse de l'utilisateur
+    pays                    Pays?                                                             //  Pays de l'utilisateur
+    codepostal              String?                                                           //  Code postal de l'utilisateur
+    rue                     String?                                                           //  Rue de l'utilisateur
+    ville                   String?                                                           //  Ville de l'utilisateur
+    complementadresse       String?                                                           //  Complément d'adresse de l'utilisateur
 
     isadmin                 Boolean          @default(false)                                  //  Etat administrateur de l'utilisateur
-    
+
+    lesson                  Learn[]                                                           //  Leçons suivies par l'utilisateur
 
 }
 
@@ -61,6 +64,19 @@ model Word {
     traduitPar              Word[]           @relation("traduction")                          //  Traduit par le mot
 
     phrases                 Sentence[]       @relation("phrase")                              //  Phrases contenant le mot
+}
+
+model Learn {
+
+    id                      Int              @id @unique @default(autoincrement())            //  Id de la leçon
+    createdAt               DateTime         @default(now())                                  //  Date de création de la leçon
+    updatedAt               DateTime         @default(now())                                  //  Date de modification de la leçon
+
+    from                    Langue                                                            //  Langue dans laquelle la leçon sera apprise
+    to                      Langue                                                            //  Langue que l'utilisateur souhaite apprendre
+
+    followed                User[]                                                            //  Utilisateurs suivant la leçon
+
 }
 
 enum Pays {

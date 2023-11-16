@@ -7,6 +7,8 @@ import isBirthDate from '../../functions/format/formabirthdate'
 import checkPassword from '../../functions/format/formapass'
 import { promises as fs } from 'fs'
 import { postUser } from '../../functions/interface/post/user/postUser'
+import { jenerate } from '../../functions/format/jenerate'
+import checkconnexion from '../../functions/utils/checkconnexion'
 
 export default function Register({lang,page}) {
 
@@ -27,9 +29,24 @@ export default function Register({lang,page}) {
     const [pseudoError, setPseudoError] = useState(false)
     const [birthDateError, setBirthDateError] = useState(false)
     const [passwordError, setPasswordError] = useState([false,false,false,false,false,false,false])
+    const [loader, setLoader] = useState(false)
+
+    useEffect(()=>{
+        checkconnexion(router)
+    },[])
 
     async function insertuser(){
+        setLoader(true)
         await postUser({langSpoken,langLearning},birthDate,name,pseudo,email,password)
+        .then((res)=>{
+            if(res?.retour===true){
+                jenerate(res.data)
+                router.push(`/profile/@${pseudo}`)
+            }else{
+                setLoader(false)
+                alert("L'inscription a échouée. Veuillez réessayer.")
+            }
+        })
     }
     
     return (
@@ -41,7 +58,7 @@ export default function Register({lang,page}) {
                 <button disabled={onglet===1} onClick={()=>setOnglet(onglet-1)} className={`flex flex-col h-full w-full items-start justify-center px-4 transition-all duration-300 ease-in-out ${onglet===1?'opacity-0':'opacity-1'}`}>
                     
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#381C11" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                     </svg>
 
                 </button>
