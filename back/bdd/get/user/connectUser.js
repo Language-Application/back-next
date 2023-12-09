@@ -8,10 +8,14 @@ export async function connectUser(email,password){
     const user = await prisma.user.findFirst({
 
         where: {
-            email : {
-                equals: email,
-                mode: 'insensitive'
-            },
+            OR: [
+                {
+                    email: email
+                },
+                {
+                    pseudo: email
+                }
+            ]
         },
 
         select: {
