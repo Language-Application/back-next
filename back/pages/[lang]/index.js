@@ -32,13 +32,15 @@ export default function Home({lang,footer,header,page}) {
             
             <div className='flex flex-col gap-4 w-full md:justify-center items-center'>
   
-              <button onClick={()=>router.push(`/${lang.toLowerCase()}/register`)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-[#E4DDC3] font-bold'>
-                  
+              {/* <button onClick={()=>router.push(`/${lang.toLowerCase()}/register`)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-[#E4DDC3] font-bold'> */}
+              <button onClick={()=>router.push(`/${lang.toLowerCase()}/me/learn`)} className='flex w-full max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] bg-[#381C11] border-black text-[#E4DDC3] font-bold'>
+
                 <p>{page.button1.toUpperCase()}</p>
     
               </button>
     
-              <button onClick={()=>router.push(`/${lang.toLowerCase()}/log-in`)} className='flex w-full bg-[#E4DDC3] max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-[#381C11] text-[#381C11] font-bold'>
+              {/* <button onClick={()=>router.push(`/${lang.toLowerCase()}/log-in`)} className='flex w-full bg-[#E4DDC3] max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-[#381C11] text-[#381C11] font-bold'> */}
+              <button onClick={()=>router.push(`/${lang.toLowerCase()}/me/learn`)} className='flex w-full bg-[#E4DDC3] max-w-[330px] text-sm flex-row px-4 py-2.5 items-center justify-center h-[50px] rounded-[15px] border-[2px] border-b-[4px] border-[#381C11] text-[#381C11] font-bold'>
                   
                 <p>{page.button2.toUpperCase()}</p>
     
