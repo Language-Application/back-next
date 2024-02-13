@@ -46,9 +46,9 @@ export default function Index({lang,path,page}) {
 
         <div className='flex flex-row h-full w-[1056px] gap-12'>
 
-          <div className='flex flex-col w-[592px] h-full'>
+          <div className='flex flex-col w-[592px] overflow-hidden h-full'>
 
-            <div>{path==="learn"?<Learn title={`${"apprendre".substring(0,1).toUpperCase()}${"apprendre".substring(1,"apprendre".length)}`}/>:""}</div>
+            {path==="learn"?<Learn router={router} title={`${"apprendre".substring(0,1).toUpperCase()}${"apprendre".substring(1,"apprendre".length)}`}/>:""}
 
           </div>
 
