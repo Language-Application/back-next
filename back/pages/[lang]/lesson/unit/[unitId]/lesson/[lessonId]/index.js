@@ -8,8 +8,21 @@ export default function exercice({lang,lesson,unit}){
 
     const router = useRouter()
 
-    const [index,setIndex]=useState(0)
-    const [validation,setValidation]=useState(false)
+    const [index,setIndex]=useState(0)  //  Index de l'exercice en cours
+    const [validation,setValidation]=useState(false)  //  Quand l'exercice est en cours de validation
+    const [error,setError]=useState({'state':false,'text':null})  //  Quand l'exercice retourne une erreur, suivi du texte à afficher
+    const [success,setSuccess]=useState({'state':false,'text':null})  //  Quand l'exercice retourne un succès, suivi du texte à afficher
+    const [empty,setEmpty]=useState(true)  //  Quand l'exercice est vide
+    const [finished,setFinished]=useState(false)  //  Quand l'exercice est terminé
+    const [logResults,setLogResults]=useState(false)  //  Quand on veut afficher les résultats
+  
+    useEffect(()=>{
+      if((parseInt(unit)+parseInt(lesson))===index){
+        setFinished(true)
+      }else{
+        setFinished(false)
+      }
+    },[index])
   
     useEffect(()=>{
         checkconnexion(router)
@@ -17,45 +30,67 @@ export default function exercice({lang,lesson,unit}){
 
     return(
         <div className='flex flex-col h-screen w-screen items-center bg-gray-900 justify-between'>
+          
+          <div className={`${logResults===false?"flex":"hidden"} flex-col items-center h-full w-full`}>
 
-          <div className='flex flex-row h-[82px] w-[1000px] justify-end items-end'>
+            <div className='flex flex-row h-[82px] w-[1000px] justify-end items-end'>
 
-            <div className='flex flex-row h-[32px] gap-6 w-full flex-1 items-center justify-between'>
+              <div className='flex flex-row h-[32px] gap-6 w-full flex-1 items-center justify-between'>
 
-              <button className='flex flex-col h-full items-center justify-center' onClick={()=>router.back()}>
-                <svg className='h-6 w-6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg>
-              </button>
+                <button className='flex flex-col h-full items-center justify-center' onClick={()=>router.back()}>
+                  <svg className='h-6 w-6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                  </svg>
+                </button>
 
-              <div className='flex flex-col h-4 w-full rounded-full bg-gray-500'>
-                <div style={{width:(index/(parseInt(unit)+parseInt(lesson)))*100+'%'}} className={`flex transition-all duration-300 ease-in-out flex-col h-full bg-white rounded-full`}/>
+                <div className='flex flex-col h-4 w-full rounded-full bg-gray-500'>
+                  <div style={{width:(index/(parseInt(unit)+parseInt(lesson)))*100+'%'}} className={`flex transition-all duration-300 ease-in-out flex-col h-full bg-white rounded-full`}/>
+                </div>
+
+                <button className='flex flex-row h-full items-center justify-center text-xl gap-2'>
+                  <svg className='h-5 w-5 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                  </svg>
+                  5
+                </button>
+
               </div>
 
-              <button className='flex flex-row h-full items-center justify-center text-xl gap-2'>
-                <svg className='h-5 w-5 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-                </svg>
-                5
-              </button>
-
             </div>
+            
+            <Exercice validation={validation} setValidation={setValidation} empty={empty} setEmpty={setEmpty} error={error} setError={setError} success={success} setSuccess={setSuccess}/>
 
           </div>
           
-          <Exercice/>
+          <div className={`${logResults===true?"flex":"hidden"} flex-col items-center h-full w-full justify-center`}>
 
-          <div className='flex flex-row h-[140px] w-screen items-center justify-center border-t-2 border-gray-500'>
+            <p>REVIEW</p>
 
-            <div className={`flex-row h-full ${validation===false?"flex":"hidden"} w-[1000px] justify-between items-center`}>
+          </div>
 
-              <button onClick={()=>{setValidation(true)}} className='flex flex-col px-4 py-2.5 rounded-xl border-2 border-gray-500 border-b-4'>Check</button>
+          <div className={`flex flex-row h-[140px] ${validation===true?"bg-gray-800":"bg-gray-900"} w-screen items-center justify-center border-t-2 border-gray-500`}>
+
+            <div className={`flex-row h-full ${validation===false&&finished===false&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
+
+              <button disabled={empty} onClick={()=>{setValidation(true),setEmpty(true)}} className={`flex flex-col w-[125px] text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-gray-500 ${empty===true?"opacity-25 bg-gray-500":"bg-green-500"} border-b-4`}>Vérifier</button>
 
             </div>
 
-            <div className={`flex-row h-full ${validation===true?"flex":"hidden"} w-[1000px] bg-green-500 justify-end items-center`}>
+            <div className={`flex-row h-full ${validation===true&&finished===false&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
 
-              <button onClick={()=>{setIndex(index+1),setValidation(false)}} className='flex flex-col px-4 py-2.5 rounded-xl border-2 border-gray-500 border-b-4'>Next</button>
+              <button onClick={()=>{setIndex(index+1),setValidation(false)}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Continue</button>
+
+            </div>
+
+            <div className={`flex-row h-full ${finished===true&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
+
+              <button onClick={()=>{setIndex(index+1),setLogResults(true)}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Résultats</button>
+
+            </div>
+
+            <div className={`flex-row h-full ${logResults===true?"flex":"hidden"} w-[1000px] justify-end items-center`}>
+
+              <button onClick={()=>{router.push('/en/me/learn')}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Terminer</button>
 
             </div>
 
