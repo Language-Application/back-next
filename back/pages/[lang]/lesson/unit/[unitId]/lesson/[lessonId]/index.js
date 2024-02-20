@@ -28,6 +28,16 @@ export default function exercice({lang,lesson,unit}){
         checkconnexion(router)
     },[])
 
+    // useEffect(()=>{
+    //     alert("Success : ",success.text)
+    //     console.log("Success : ",success.text)
+    // },[success])
+
+    // useEffect(()=>{
+    //     alert("Error : ",error.text)
+    //     console.log("Error : ",error.text)
+    // },[error])
+
     return(
         <div className='flex flex-col h-screen w-screen items-center bg-gray-900 justify-between'>
           

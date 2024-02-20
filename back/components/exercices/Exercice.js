@@ -12,9 +12,19 @@ export default function Exercice({validation,setValidation,empty,setEmpty,error,
         ["Délicieux","Delicious"],
     ]
 
+    // useEffect(()=>{
+    //     alert("Success : ",success.text)
+    //     console.log("Success : ",success.text)
+    // },[success])
+
+    // useEffect(()=>{
+    //     alert("Error : ",error.text)
+    //     console.log("Error : ",error.text)
+    // },[error])
+
     return(
         <div className={`flex flex-col h-full w-full items-center justify-center`}>
-            <LinkExerciceType data={data} changed={empty} setChanged={setEmpty}/>
+            <LinkExerciceType validation={validation} setValidation={setValidation} data={data} changed={empty} setChanged={setEmpty} setError={setError} setSuccess={setSuccess}/>
         </div>
     )
 }

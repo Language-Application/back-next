@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 
-export default function LinkExerciceType({ data, changed, setChanged }) {
+export default function LinkExerciceType({ validation, setValidation, data, changed, setChanged, setError, setSuccess }) {
     const [firstColumnSelected, setFirstColumnSelected] = useState(null);
     const [secondColumnSelected, setSecondColumnSelected] = useState(null);
-    const [shuffledSecondColumn, setShuffledSecondColumn] = useState([...data.map(item => item[1])]);
-    const [linkedPairs, setLinkedPairs] = useState([]);
-    const [unlinkedPairs, setUnlinkedPairs] = useState([]);
-    const [initialSecondColumnOrder] = useState([...data.map(item => item[1])]);
+    const [shuffledSecondColumn, setShuffledSecondColumn] = useState([]);
 
     useEffect(() => {
-        setShuffledSecondColumn([...initialSecondColumnOrder]);
-    }, [initialSecondColumnOrder]);
+        // Initialiser le tableau mélangé une seule fois
+        const shuffledColumn = [...data.map(item => item[1])].sort(() => Math.random() - 0.5);
+        setShuffledSecondColumn(shuffledColumn);
+    }, []);
+
+    const [linkedPairs, setLinkedPairs] = useState([]);
+    const [unlinkedPairs, setUnlinkedPairs] = useState([]);
 
     useEffect(() => {
         if (unlinkedPairs.length > 0) {
@@ -58,6 +60,9 @@ export default function LinkExerciceType({ data, changed, setChanged }) {
             setLinkedPairs(newLinkedPairs);
             setFirstColumnSelected(null);
             setSecondColumnSelected(null);
+
+            // Set success message
+            setSuccess({ state: true, text: "Bravo, vous avez trouvé une paire !" });
         } else {
             const newUnlinkedPairs = [...unlinkedPairs, [firstIndex, secondIndex]];
             setUnlinkedPairs(newUnlinkedPairs);
@@ -65,10 +70,14 @@ export default function LinkExerciceType({ data, changed, setChanged }) {
                 setFirstColumnSelected(null);
                 setSecondColumnSelected(null);
             }, 60);
+
+            // Set error message
+            setError({ state: true, text: "Désolé, cette paire ne correspond pas." });
         }
 
         if (linkedPairs.length === data.length - 1) {
-            alert("Toutes les cartes sont sélectionnées !");
+            // Set validation state
+            setValidation(true);
         }
     }
 
@@ -89,7 +98,7 @@ export default function LinkExerciceType({ data, changed, setChanged }) {
             </div>
             <div className="flex flex-col flex-1 h-full w-full gap-6">
                 {/* Mapper sur le deuxième groupe */}
-                {initialSecondColumnOrder.map((item, index) => (
+                {shuffledSecondColumn.map((item, index) => (
                     <button
                         key={index}
                         className={`flex text-center justify-center items-center p-4 border-2 border-gray-500 rounded-xl ${linkedPairs.some(pair => pair[1] === index) ? 'bg-green-500' : secondColumnSelected === index ? 'bg-blue-500' : unlinkedPairs.some(pair => pair[1] === index) ? 'bg-red-500' : ''}`}
