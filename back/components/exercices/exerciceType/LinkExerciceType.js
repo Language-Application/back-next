@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function LinkExerciceType({ validation, setValidation, data, changed, setChanged, setError, setSuccess }) {
+    
     const [firstColumnSelected, setFirstColumnSelected] = useState(null);
     const [secondColumnSelected, setSecondColumnSelected] = useState(null);
     const [shuffledSecondColumn, setShuffledSecondColumn] = useState([]);
