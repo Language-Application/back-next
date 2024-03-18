@@ -68,41 +68,13 @@ export default function exercice({lang,lesson,unit}){
 
             </div>
             
-            <Exercice validation={validation} setValidation={setValidation} empty={empty} setEmpty={setEmpty} error={error} setError={setError} success={success} setSuccess={setSuccess}/>
+            <Exercice setIndex={setIndex} index={index} setLogResults={setLogResults} logResults={logResults} finished={finished} validation={validation} setValidation={setValidation} empty={empty} setEmpty={setEmpty} error={error} setError={setError} success={success} setSuccess={setSuccess}/>
 
           </div>
           
           <div className={`${logResults===true?"flex":"hidden"} flex-col items-center h-full w-full justify-center`}>
 
             <p>REVIEW</p>
-
-          </div>
-
-          <div className={`flex flex-row h-[140px] ${validation===true?"bg-gray-800":"bg-gray-900"} w-screen items-center justify-center border-t-2 border-gray-500`}>
-
-            <div className={`flex-row h-full ${validation===false&&finished===false&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
-
-              <button disabled={empty} onClick={()=>{setValidation(true),setEmpty(true)}} className={`flex flex-col w-[125px] text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-gray-500 ${empty===true?"opacity-25 bg-gray-500":"bg-green-500"} border-b-4`}>Vérifier</button>
-
-            </div>
-
-            <div className={`flex-row h-full ${validation===true&&finished===false&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
-
-              <button onClick={()=>{setIndex(index+1),setValidation(false)}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Continue</button>
-
-            </div>
-
-            <div className={`flex-row h-full ${finished===true&&logResults===false?"flex":"hidden"} w-[1000px] justify-end items-center`}>
-
-              <button onClick={()=>{setIndex(index+1),setLogResults(true)}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Résultats</button>
-
-            </div>
-
-            <div className={`flex-row h-full ${logResults===true?"flex":"hidden"} w-[1000px] justify-end items-center`}>
-
-              <button onClick={()=>{router.push('/en/me/learn')}} className='flex flex-col w-[125px] bg-green-500 text-center items-center justify-center px-4 py-2.5 rounded-xl border-2 border-green-700 border-b-4'>Terminer</button>
-
-            </div>
 
           </div>
 
